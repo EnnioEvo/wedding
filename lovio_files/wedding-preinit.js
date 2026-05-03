@@ -73,6 +73,10 @@
       link.textContent = "Conferma la presenza";
       link.setAttribute("href", "#rsvp");
     }
+
+    forceImage(hero.querySelector(".overflow-hero---b-left .image-hero---b"), "lovio_files/pictures/photos/left.jpeg");
+    forceImage(hero.querySelector(".overflow-hero---b-right .image-hero---b"), "lovio_files/pictures/photos/right.jpeg");
+    forceImage(hero.querySelector(".overflow-hero---b:not(.overflow-hero---b-left):not(.overflow-hero---b-right) .image-hero---b"), "lovio_files/pictures/photos/central.jpeg");
   }
 
   var overflow = document.querySelector(".overflow");
@@ -110,17 +114,17 @@
         '<div class="block-heading margin">',
           '<div class="wedding-eyebrow">La nostra storia</div>',
           '<h2 class="heading">Un cammino verso il sì</h2>',
-          '<p class="wedding-lead">Piccoli capitoli da completare con i vostri ricordi, mantenendo il ritmo verticale e romantico del template originale.</p>',
-        '</div>',
-        '<div class="story-timeline">',
-          storyCard("Capitolo 01", "Il primo incontro", "Un inizio semplice, una conversazione rimasta nel cuore e la sensazione che qualcosa di bello stesse per nascere."),
-          storyCard("Capitolo 02", "I primi passi insieme", "Passeggiate, risate e quei dettagli quotidiani che hanno trasformato due strade in una direzione comune."),
-          storyCard("Capitolo 03", "Il primo viaggio", "Una meta speciale, tante foto da riguardare e la certezza di saper condividere anche l'avventura."),
-          storyCard("Capitolo 04", "La proposta", "Un momento intimo, emozionato e pieno di futuro: il giorno in cui il per sempre ha preso forma."),
-          storyCard("Capitolo 05", "Verso il matrimonio", "Famiglia, amici, preparativi e l'attesa felice di ritrovarci tutti insieme il 3 ottobre."),
+    '<p class="wedding-lead">I luoghi, i cambiamenti e i ricordi che ci hanno accompagnati fino a questo giorno.</p>',
         '</div>',
       '</div>',
     '</section>',
+    storyFeature("01", "L'inizio", "Il nostro inizio", "Da un primo incontro semplice è nato qualcosa che, giorno dopo giorno, ha trovato spazio nella vita di entrambi.", "pictures/photos/01_inizio.jpeg", false, "lovio_files/610c8b9392065e16f1e8152e_flower_5.png", "flower---a"),
+    storyFeature("02", "La vita in Sicilia", "Un rapporto a (poca) distanza", "Tra treni e autostrade, viaggiavamo tra Termini e Palermo per stare assieme: famiglia, amici e piccoli momenti diventati ricordi.", "pictures/photos/02_la_vita_in_sicilia.jpeg", true, "lovio_files/610b43d611194a874e2d3f7f_flower_2.png", "flower---b"),
+    storyFeature("03", "Le vacanze insieme", "Strade nuove, stesso passo", "Viaggiare ci ha insegnato a guardarci nella stessa direzione, tra partenze, ritorni e foto che raccontano più di mille parole.", "pictures/photos/03_le_vacanze_assieme.jpeg", false, "lovio_files/610c8b9392065e16f1e8152e_flower_5.png", "flower---a"),
+    storyFeature("04", "Il trasferimento a Roma", "Una nuova città", "Roma è stata una scelta importante: un cambiamento condiviso, una nuova routine e un altro pezzo della nostra storia.", "pictures/photos/04_il_trasferimento_a_roma.jpeg", true, "lovio_files/610b43d611194a874e2d3f7f_flower_2.png", "flower---b"),
+    storyFeature("05","Un nuovo quotidiano", "I nostri primi mobili Ikea",  "Abbiamo imparato a condividere la semplicità della vita quotidiana.", "pictures/photos/05_i_nostri_primi_mobili_ikea.jpeg", false, "lovio_files/610c8b9392065e16f1e8152e_flower_5.png", "flower---a"),
+    storyFeature("06","Il nostro presente", "La vita a Roma",  "Tra lavoro, casa e progetti, Roma è diventata il posto da cui guardare al futuro e prepararci al nostro sì.", "pictures/photos/06_la_vita_a_roma.jpeg", false, "lovio_files/610c8b9392065e16f1e8152e_flower_5.png", "flower---a"),
+    storyFeature("07", "Ha detto sì", "La proposta", "La decisione di passare il resto della nostra vita insieme.", "pictures/photos/07_la_proposta.jpeg", false, "lovio_files/610c8b9392065e16f1e8152e_flower_5.png", "flower---a"),
     '<section id="dettagli" class="section wedding-section alt reveal-on-scroll">',
       '<div class="content">',
         '<div class="block-heading margin">',
@@ -129,12 +133,14 @@
         '</div>',
         '<div class="details-grid">',
           detailCard("Data e orari", "Sabato 3 ottobre 2026<br>Cerimonia alle 11:00<br>Ricevimento dalle 13:00 alle 19:00"),
-          detailCard("Cerimonia", "Chiesa Santa Caterina di Palermo<br>Un momento raccolto per iniziare insieme la giornata."),
-          detailCard("Ricevimento", "Baglio della Luna, Partinico<br>Pranzo, brindisi e festa fino al tramonto."),
-          detailCard("Dress code", "Elegante da cerimonia. Scegliete colori e tessuti comodi per una giornata siciliana di inizio ottobre."),
-          '<div class="wedding-card"><h3 class="wedding-card-title">Programma</h3><ol class="schedule-list"><li>11:00 - Cerimonia</li><li>13:00 - Arrivo a Baglio della Luna</li><li>13:30 - Pranzo e festeggiamenti</li><li>19:00 - Saluti finali</li></ol></div>',
-          '<div class="wedding-card map-card"><h3 class="wedding-card-title">Mappa</h3><p class="wedding-card-text">Qui verrà inserito l\'embed della mappa con le indicazioni per la chiesa e la location.</p><div class="map-placeholder">Placeholder mappa</div></div>',
-        '</div>',
+    // detailCard("Cerimonia", "Chiesa Santa Caterina di Palermo<br>Un momento raccolto per iniziare insieme la giornata."),
+    // detailCard("Ricevimento", "Baglio della Luna, Partinico<br>Pranzo, brindisi e festa fino al tramonto."),
+    // detailCard("Dress code", "Elegante da cerimonia. Scegliete colori e tessuti comodi per una giornata siciliana di inizio ottobre."),
+    // '<div class="wedding-card"><h3 class="wedding-card-title">Programma</h3><ol class="schedule-list"><li>11:00 - Cerimonia</li><li>13:00 - Arrivo a Baglio della Luna</li><li>13:30 - Pranzo e festeggiamenti</li><li>19:00 - Saluti finali</li></ol></div>',
+    '<div class="wedding-card map-card"><h3 class="wedding-card-title">Cerimonia</h3><p class="wedding-card-text">Chiesa Santa Caterina di Palermo<br>Un momento raccolto per iniziare insieme la giornata.</p><div class="map-placeholder">Placeholder mappa</div></div>',
+    '<div class="wedding-card map-card"><h3 class="wedding-card-title">Ricevimento</h3><p class="wedding-card-text">Baglio della Luna, Partinico<br>Pranzo, brindisi e festa fino al tramonto.</p><div class="map-placeholder">Placeholder mappa</div></div>',
+
+    '</div>',
       '</div>',
     '</section>',
     '<section id="galleria" class="section wedding-section reveal-on-scroll">',
@@ -195,8 +201,42 @@
     '</footer>'
   ].join(""));
 
-  function storyCard(date, title, text) {
-    return '<article class="story-card"><div class="story-date">' + date + '</div><h3 class="story-title">' + title + '</h3><p class="story-text">' + text + '</p></article>';
+  function forceImage(node, src) {
+    if (!node) return;
+    node.setAttribute("src", src);
+    node.removeAttribute("srcset");
+    node.removeAttribute("sizes");
+    node.setAttribute("loading", "eager");
+    node.style.opacity = "1";
+  }
+
+  function storyFeature(number, eyebrow, title, text, image, imageFirst, flowerSrc, flowerClass) {
+    var textBlock = [
+      '<div class="block-text">',
+      '<img src="lovio_files/610b3993bc98ff5499b83f82_subtitle.png" loading="lazy" alt="" width="62" class="image-subtitle">',
+      '<div class="subtitle">Capitolo ' + number + '<br></div>',
+      '<h2 class="heading">' + title + '</h2>',
+      '<p class="paragraph"><strong>' + eyebrow + '.</strong> ' + text + '</p>',
+      '</div>'
+    ].join("");
+    var imageBlock = [
+      '<div class="block-image wedding-story-image">',
+      '<div class="overflow-image">',
+      '<img class="image" src="lovio_files/' + image + '" alt="' + title + '" loading="lazy">',
+      '</div>',
+      '<img src="' + flowerSrc + '" loading="eager" alt="" class="' + flowerClass + '">',
+      '</div>'
+    ].join("");
+    return [
+      '<section class="section wedding-story-section reveal-on-scroll">',
+      '<div class="content">',
+      '<div class="w-layout-grid grid-2-columns">',
+      imageFirst ? imageBlock : textBlock,
+      imageFirst ? textBlock : imageBlock,
+      '</div>',
+      '</div>',
+      '</section>'
+    ].join("");
   }
 
   function detailCard(title, text) {

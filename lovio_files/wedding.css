@@ -10,10 +10,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background: var(--wedding-paper);
+  overflow-x: hidden;
 }
 
 .cart-block,
@@ -60,6 +62,10 @@ body {
 .flower-hero---b1,
 .flower-hero---b2 {
   opacity: 1 !important;
+}
+
+.image-hero---b {
+  object-fit: cover;
 }
 
 .wedding-section {
@@ -268,6 +274,35 @@ body {
   line-height: 165%;
 }
 
+.wedding-story-section {
+  background: var(--wedding-paper);
+}
+
+.wedding-story-section .grid-2-columns {
+  align-items: center;
+}
+
+.wedding-story-section .overflow-image {
+  background-color: var(--wedding-cream);
+  transform: rotate(3deg);
+}
+
+.wedding-story-section:nth-of-type(even) .overflow-image {
+  transform: rotate(-3deg);
+}
+
+.wedding-story-section .image {
+  aspect-ratio: 4 / 5;
+  display: block;
+}
+
+.wedding-story-section .image-subtitle,
+.wedding-story-section .image,
+.wedding-story-section .flower---a,
+.wedding-story-section .flower---b {
+  opacity: 1 !important;
+}
+
 .details-grid {
   width: 100%;
   grid-column-gap: 18px;
@@ -282,7 +317,7 @@ body {
 }
 
 .wedding-card.map-card {
-  grid-column: span 2;
+  grid-column: span 1.7;
 }
 
 .map-placeholder {
