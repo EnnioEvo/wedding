@@ -9,15 +9,24 @@
 }
 
 html {
-  color-scheme: light;
+  color-scheme: only light;
+  background-color: var(--wedding-paper);
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
 body {
-  color-scheme: light;
+  color-scheme: only light;
+  color: var(--wedding-muted);
   background: var(--wedding-paper);
   overflow-x: hidden;
+}
+
+input,
+select,
+textarea,
+button {
+  color-scheme: only light;
 }
 
 .heading,
@@ -661,6 +670,38 @@ body {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html,
+  body,
+  .overflow,
+  .wedding-section,
+  .wedding-story-section {
+    color: var(--wedding-muted) !important;
+    background: var(--wedding-paper) !important;
+    background-color: var(--wedding-paper) !important;
+  }
+
+  .wedding-section.alt,
+  .rsvp-panel,
+  .gift-panel,
+  .wedding-card,
+  .countdown-card,
+  .gift-copy-row,
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    color: var(--wedding-ink) !important;
+    background: #fff !important;
+    background-color: #fff !important;
+    border-color: var(--wedding-line) !important;
+  }
+
+  img,
+  iframe {
+    filter: none !important;
   }
 }
 
