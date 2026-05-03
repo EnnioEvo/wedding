@@ -158,9 +158,18 @@
       '<div class="content">',
         '<div class="gift-panel">',
           '<div class="wedding-eyebrow">Regali</div>',
-          '<h2 class="gift-title">Non sai cosa regalarci?</h2>',
-          '<p class="gift-text">Regalaci il viaggio di nozze: Thailandia / Indonesia / Perù / Polinesia 2027 (da definire).</p>',
-          '<div class="gift-route">Thailandia · Indonesia · Perù · Polinesia</div>',
+          '<h2 class="gift-title">La vostra presenza è il regalo più grande!</h2>',
+          '<p class="gift-text gift-intro">Ma se vuoi anche contribuire al nostro nuovo inizio assieme, stiamo sognando un viaggio di nozze esotico per il 2027 tra queste mete meravigliose:</p>',
+          '<div class="gift-destinations" aria-label="Mete del viaggio di nozze">',
+            giftDestination("🌴", "Thailandia"),
+            giftDestination("🌺", "Indonesia"),
+            giftDestination("🦙", "Perù"),
+            giftDestination("🌊", "Polinesia"),
+          '</div>',
+          '<div class="gift-bank">',
+            giftCopyRow("IBAN", "IT09 W036 6901 6002 9539 2512 690"),
+            giftCopyRow("Intestatario", "Ennio Filicicchia & Maria Corsale"),
+          '</div>',
         '</div>',
       '</div>',
     '</section>',
@@ -235,7 +244,23 @@
     return '<div class="wedding-card"><h3 class="wedding-card-title">' + title + '</h3><p class="wedding-card-text">' + text + '</p></div>';
   }
 
+  function giftDestination(icon, label) {
+    return '<div class="gift-destination"><div class="gift-destination-icon" aria-hidden="true">' + icon + '</div><div class="gift-destination-label">' + label + '</div></div>';
+  }
+
+  function giftCopyRow(label, value) {
+    return '<div class="gift-copy-row"><div><div class="gift-copy-label">' + escapeHtml(label) + '</div><div class="gift-copy-value">' + escapeHtml(value) + '</div></div><button class="gift-copy-button" type="button" data-copy-value="' + escapeHtml(value) + '" aria-label="Copia ' + escapeHtml(label) + '" title="Copia"><img src="lovio_files/copy.svg" alt="" aria-hidden="true"></button></div>';
+  }
+
   function formField(label, name, type, placeholder, required) {
     return '<div class="form-field"><label for="' + name + '">' + label + '</label><input id="' + name + '" name="' + name + '" type="' + type + '" placeholder="' + placeholder + '"' + (required ? " required" : "") + "></div>";
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/"/g, "&quot;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
   }
 })();

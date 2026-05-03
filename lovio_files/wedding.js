@@ -42,6 +42,23 @@
     });
   }
 
+  document.querySelectorAll("[data-copy-value]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      copyText(button.getAttribute("data-copy-value") || "").then(function () {
+        var originalLabel = button.getAttribute("aria-label") || "Copia";
+        var originalTitle = button.getAttribute("title") || "Copia";
+        button.setAttribute("aria-label", "Copiato");
+        button.setAttribute("title", "Copiato");
+        button.classList.add("is-copied");
+        window.setTimeout(function () {
+          button.setAttribute("aria-label", originalLabel);
+          button.setAttribute("title", originalTitle);
+          button.classList.remove("is-copied");
+        }, 1600);
+      });
+    });
+  });
+
   if (window.location.hash) {
     window.setTimeout(function () {
       var target = document.querySelector(window.location.hash);
@@ -133,5 +150,28 @@
       .replace(/[-_]+/g, " ")
       .replace(/\s+/g, " ")
       .trim();
+  }
+
+  function copyText(value) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(value).catch(function () {
+        return copyTextFallback(value);
+      });
+    }
+
+    return copyTextFallback(value);
+  }
+
+  function copyTextFallback(value) {
+    var input = document.createElement("textarea");
+    input.value = value;
+    input.setAttribute("readonly", "");
+    input.style.position = "fixed";
+    input.style.opacity = "0";
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    document.body.removeChild(input);
+    return Promise.resolve();
   }
 })();

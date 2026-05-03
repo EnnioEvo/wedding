@@ -1,10 +1,10 @@
 :root {
-  --wedding-ink: #545748;
-  --wedding-muted: #7d806d;
-  --wedding-sage: #a0a48e;
+  --wedding-ink: #506400;
+  --wedding-muted: #68705a;
+  --wedding-sage: #8a9570;
   --wedding-paper: #fbf8f2;
   --wedding-cream: #f4efe6;
-  --wedding-line: rgba(84, 87, 72, .18);
+  --wedding-line: rgba(80, 100, 0, .18);
   --wedding-wax: #9f4f47;
 }
 
@@ -16,6 +16,44 @@ html {
 body {
   background: var(--wedding-paper);
   overflow-x: hidden;
+}
+
+.heading,
+.heading-hero,
+.wedding-logo,
+.countdown-number,
+.story-title,
+.wedding-card-title,
+.gift-title,
+.footer-initials {
+  color: var(--wedding-ink);
+}
+
+.paragraph,
+.wedding-lead,
+.wedding-card-text,
+.gift-text,
+.map-placeholder,
+.footer-date,
+.footer-love {
+  color: var(--wedding-muted);
+}
+
+.subtitle,
+.nav-link,
+.link,
+.countdown-label,
+.wedding-eyebrow,
+.story-date,
+.form-field label,
+.gift-copy-label {
+  color: var(--wedding-sage);
+}
+
+.button,
+.gift-copy-button {
+  color: var(--wedding-ink);
+  border-color: var(--wedding-ink);
 }
 
 .cart-block,
@@ -423,19 +461,136 @@ body {
 
 .gift-panel {
   width: 100%;
-  max-width: 860px;
+  max-width: 960px;
   text-align: center;
-  padding: 42px;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
 }
 
-.gift-route {
-  color: var(--wedding-wax);
-  letter-spacing: 1px;
+.gift-panel:before {
+  content: "";
+  width: 190px;
+  height: 190px;
+  border: 1px solid var(--wedding-line);
+  border-radius: 999px;
+  position: absolute;
+  top: -85px;
+  right: -50px;
+  opacity: .55;
+}
+
+.gift-title {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+}
+
+.gift-intro {
+  max-width: 720px;
+  margin: 0 auto 30px;
+  font-size: 21px;
+  line-height: 170%;
+}
+
+.gift-destinations {
+  grid-column-gap: 14px;
+  grid-row-gap: 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 34px 0;
+  display: grid;
+}
+
+.gift-destination {
+  border: 1px solid var(--wedding-line);
+  background: rgba(244, 239, 230, .62);
+  border-radius: 8px;
+  padding: 22px 14px;
+}
+
+.gift-destination-icon {
+  margin-bottom: 9px;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.gift-destination-label {
+  color: var(--wedding-ink);
+  font-family: Marcellus, sans-serif;
+  font-size: 24px;
+  line-height: 120%;
+}
+
+.gift-bank {
+  width: 100%;
+  max-width: 760px;
+  border-top: 1px solid var(--wedding-line);
+  margin: 8px auto 0;
+  padding-top: 22px;
+}
+
+.gift-copy-row {
+  border: 1px solid var(--wedding-line);
+  background: rgba(255, 255, 255, .7);
+  border-radius: 8px;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 18px;
+  margin-top: 14px;
+  padding: 18px;
+  display: grid;
+  text-align: center;
+}
+
+.gift-copy-label {
+  color: var(--wedding-sage);
+  letter-spacing: 2px;
   text-transform: uppercase;
-  margin-top: 18px;
+  margin-bottom: 7px;
   font-family: Montserrat, sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
+}
+
+.gift-copy-value {
+  color: var(--wedding-ink);
+  overflow-wrap: anywhere;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.gift-copy-button {
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--wedding-ink);
+  color: var(--wedding-ink);
+  background: transparent;
+  border-radius: 999px;
+  place-items: center;
+  padding: 0;
+  cursor: pointer;
+  display: grid;
+  transition: color .25s ease, background-color .25s ease;
+}
+
+.gift-copy-button img {
+  width: 19px;
+  height: 19px;
+  display: block;
+}
+
+.gift-copy-button:hover,
+.gift-copy-button.is-copied {
+  color: #fff;
+  background: var(--wedding-ink);
+}
+
+.gift-copy-button:hover img,
+.gift-copy-button.is-copied img {
+  filter: brightness(0) invert(1);
 }
 
 .wedding-footer {
@@ -508,6 +663,10 @@ body {
   .gallery-grid {
     column-count: 3;
   }
+
+  .gift-destinations {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -548,6 +707,15 @@ body {
   .gift-panel {
     padding: 28px 20px;
   }
+
+  .gift-title {
+    font-size: 34px;
+  }
+
+  .gift-copy-row {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -569,6 +737,10 @@ body {
 
   .gallery-grid {
     column-count: 1;
+  }
+
+  .gift-destinations {
+    grid-template-columns: 1fr;
   }
 
   .wax-seal {
