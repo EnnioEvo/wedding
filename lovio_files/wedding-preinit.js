@@ -70,7 +70,7 @@
     if (subtitle) subtitle.innerHTML = "3 ottobre 2026<br>";
     if (heading) heading.innerHTML = "Ennio e<br>Miriam";
     if (link) {
-      link.textContent = "Conferma la presenza";
+      link.textContent = "Conferma la tua presenza";
       link.setAttribute("href", "#rsvp");
     }
 
@@ -138,8 +138,8 @@
     // detailCard("Ricevimento", "Baglio della Luna, Partinico<br>Pranzo, brindisi e festa fino al tramonto."),
     // detailCard("Dress code", "Elegante da cerimonia. Scegliete colori e tessuti comodi per una giornata siciliana di inizio ottobre."),
     // '<div class="wedding-card"><h3 class="wedding-card-title">Programma</h3><ol class="schedule-list"><li>11:00 - Cerimonia</li><li>13:00 - Arrivo a Baglio della Luna</li><li>13:30 - Pranzo e festeggiamenti</li><li>19:00 - Saluti finali</li></ol></div>',
-    '<div class="wedding-card map-card"><h3 class="wedding-card-title">Cerimonia</h3><p class="wedding-card-text">Chiesa Santa Caterina di Palermo<br>Un momento raccolto per iniziare insieme la giornata.</p><div class="map-placeholder">Placeholder mappa</div></div>',
-    '<div class="wedding-card map-card"><h3 class="wedding-card-title">Ricevimento</h3><p class="wedding-card-text">Baglio della Luna, Partinico<br>Pranzo, brindisi e festa fino al tramonto.</p><div class="map-placeholder">Placeholder mappa</div></div>',
+    '<div class="wedding-card map-card"><h3 class="wedding-card-title">Cerimonia</h3><p class="wedding-card-text">Chiesa Santa Caterina di Palermo<br>Un momento raccolto per iniziare insieme la giornata.</p><div class="map-placeholder">' + mapChurchFrame() + '</div></div>',
+    '<div class="wedding-card map-card"><h3 class="wedding-card-title">Ricevimento</h3><p class="wedding-card-text">Baglio della Luna, Partinico<br>Pranzo, brindisi e festa fino al tramonto.</p><div class="map-placeholder">' + mapWeddingFrame() + '</div></div>',
 
     '</div>',
       '</div>',
@@ -177,7 +177,7 @@
       '<div class="content">',
         '<div class="block-heading margin">',
           '<div class="wedding-eyebrow">La tua conferma</div>',
-          '<h2 class="heading">Conferma la presenza</h2>',
+          '<h2 class="heading">Conferma la tua presenza</h2>',
           '<p class="wedding-lead">Il form è dimostrativo: mostra una conferma in pagina e non invia ancora i dati.</p>',
         '</div>',
         '<div class="rsvp-panel">',
@@ -262,5 +262,18 @@
       .replace(/"/g, "&quot;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;");
+  }
+
+  function mapFrame(src) {
+    return '<iframe src="' + src + '" width="300" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+  }
+  function mapChurchFrame() {
+    // Chiesa di Santa Caterina
+    return mapFrame("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12556.28587205697!2d13.345676689877665!3d38.11527170000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319e58b0e28c325%3A0x5037f4ed3b7411d1!2sChiesa%20e%20Monastero%20di%20Santa%20Caterina%20d&#39;Alessandria!5e0!3m2!1sit!2sit!4v1777821141426!5m2!1sit!2sit");
+  }
+
+  function mapWeddingFrame() {
+    // Baglio della Luna
+    return mapFrame("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2856.004552612274!2d9.987081411733085!3d44.2892952109381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d504fd2efcf30f%3A0x34dfe6055358f291!2sBaglio%20della%20Luna%20Resort!5e0!3m2!1sit!2sit!4v1777821098365!5m2!1sit!2sit");
   }
 })();
