@@ -81,8 +81,9 @@ body {
 }
 
 .wedding-nav-links {
-  grid-column-gap: 22px;
-  grid-row-gap: 10px;
+  /* font-size: 30px; */
+  grid-column-gap: 12px;
+  grid-row-gap: 6px;
   align-items: center;
   display: flex;
 }
