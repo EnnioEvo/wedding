@@ -49,6 +49,8 @@
     }, 150);
   }
 
+  renderGallery();
+
   var revealNodes = Array.prototype.slice.call(document.querySelectorAll(".reveal-on-scroll"));
   if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     revealNodes.forEach(function (node) {
@@ -68,4 +70,68 @@
   revealNodes.forEach(function (node) {
     observer.observe(node);
   });
+
+  function renderGallery() {
+    var grid = document.querySelector("[data-gallery-dir]");
+    if (!grid) return;
+
+    var directory = grid.getAttribute("data-gallery-dir");
+    var fallback = (grid.getAttribute("data-gallery-fallback") || "")
+      .split("|")
+      .filter(Boolean);
+
+    loadGalleryFiles(directory)
+      .then(function (files) {
+        drawGallery(grid, directory, files.length ? files : fallback);
+      })
+      .catch(function () {
+        drawGallery(grid, directory, fallback);
+      });
+  }
+
+  function loadGalleryFiles(directory) {
+    return window.fetch(directory)
+      .then(function (response) {
+        if (!response.ok) return [];
+        return response.text();
+      })
+      .then(function (html) {
+        var doc = new DOMParser().parseFromString(html, "text/html");
+        var directoryUrl = new URL(directory, window.location.href);
+        return Array.prototype.slice.call(doc.querySelectorAll("a"))
+          .map(function (link) {
+            return new URL(link.getAttribute("href"), directoryUrl);
+          })
+          .filter(function (url) {
+            return url.pathname.indexOf(directoryUrl.pathname) === 0;
+          })
+          .map(function (url) {
+            return decodeURIComponent(url.pathname.slice(directoryUrl.pathname.length));
+          })
+          .filter(function (name) {
+            return name && !name.includes("/") && /\.(jpe?g|png|webp|gif)$/i.test(name);
+          });
+      });
+  }
+
+  function drawGallery(grid, directory, files) {
+    if (!files.length) {
+      grid.innerHTML = '<p class="gallery-empty">Aggiungi immagini nella cartella gallery.</p>';
+      return;
+    }
+
+    grid.innerHTML = files.map(function (file, index) {
+      var variant = index % 5 === 0 ? "tall" : index % 4 === 0 ? "wide" : "";
+      var src = directory + encodeURIComponent(file).replace(/%2F/g, "/");
+      return '<figure class="gallery-item ' + variant + '"><img src="' + src + '" alt="' + galleryAlt(file) + '" loading="lazy"></figure>';
+    }).join("");
+  }
+
+  function galleryAlt(file) {
+    return file
+      .replace(/\.[^.]+$/, "")
+      .replace(/[-_]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
 })();
