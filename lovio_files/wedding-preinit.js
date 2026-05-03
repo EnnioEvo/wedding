@@ -185,7 +185,7 @@
     '<h2 class="heading">Ecco altre foto bonus!</h2>',
     // '<p class="wedding-lead">Immagini temporanee da sostituire con scatti della coppia, della cerimonia e della location.</p>',
     '</div>',
-    '<div class="gallery-grid" data-gallery-dir="lovio_files/pictures/photos/gallery/" data-gallery-fallback="WhatsApp Image 2026-05-03 at 15.03.38.jpeg|WhatsApp Image 2026-05-03 at 15.03.39.jpeg|WhatsApp Image 2026-05-03 at 15.03.41b.jpeg|WhatsApp Image 2026-05-03 at 15.03.43.jpeg|WhatsApp Image 2026-05-03 at 15.03.46b.jpeg|WhatsApp Image 2026-05-03 at 15.03.46c.jpeg"></div>',
+    '<div class="gallery-grid" data-gallery-dir="lovio_files/pictures/photos/gallery/" data-gallery-fallback="WhatsApp Image 2026-05-03 at 15.03.38.jpeg|WhatsApp Image 2026-05-03 at 15.03.39.jpeg|WhatsApp Image 2026-05-03 at 15.03.41b.jpeg|WhatsApp Image 2026-05-03 at 15.03.43.jpeg|zWhatsApp Image 2026-05-03 at 15.03.46b.jpeg|WhatsApp Image 2026-05-03 at 15.03.46c.jpeg"></div>',
     '</div>',
     '</section>',
     '<footer class="section-footer wedding-footer reveal-on-scroll">',
