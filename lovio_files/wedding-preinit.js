@@ -159,7 +159,7 @@
         '<div class="gift-panel">',
           '<div class="wedding-eyebrow">Regali</div>',
           '<h2 class="gift-title">La vostra presenza è il regalo più grande!</h2>',
-          '<p class="gift-text gift-intro">Ma se vuoi anche contribuire al nostro nuovo inizio assieme, stiamo sognando un viaggio di nozze esotico per il 2027 tra queste mete meravigliose:</p>',
+          '<p class="gift-text gift-intro">Ma se vuoi contribuire al nostro nuovo inizio assieme, stiamo sognando un viaggio di nozze esotico per il 2027 tra queste mete meravigliose:</p>',
           '<div class="gift-destinations" aria-label="Mete del viaggio di nozze">',
             giftDestination("🌴", "Thailandia"),
             giftDestination("🌺", "Indonesia"),
