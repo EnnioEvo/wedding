@@ -270,6 +270,6 @@
 
   function mapWeddingFrame() {
     // Baglio della Luna
-    return mapFrame("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2856.004552612274!2d9.987081411733085!3d44.2892952109381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d504fd2efcf30f%3A0x34dfe6055358f291!2sBaglio%20della%20Luna%20Resort!5e0!3m2!1sit!2sit!4v1777821098365!5m2!1sit!2sit");
+    return mapFrame("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23741.24403720051!2d13.008149351179814!3d37.99762170909076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319891f05441005%3A0x61ffb7836984642d!2sIl%20Baglio%20della%20Luna!5e0!3m2!1sit!2sit!4v1777882576718!5m2!1sit!2sit");
   }
 })();
