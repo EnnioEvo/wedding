@@ -347,7 +347,7 @@ button {
 
 .venue-heading-section,
 .venue-section {
-  background: var(--wedding-paper);
+  background: #fff;
 }
 
 .venue-heading-section {
@@ -372,6 +372,19 @@ button {
 .venue-section .image {
   aspect-ratio: 4 / 5;
   display: block;
+}
+
+#dettagli,
+#regali {
+  background: var(--wedding-ink);
+}
+
+#dettagli .heading {
+  color: var(--wedding-paper);
+}
+
+#dettagli .wedding-eyebrow {
+  color: rgba(251, 248, 242, .74);
 }
 
 .details-grid {
@@ -712,6 +725,22 @@ button {
     color: var(--wedding-muted) !important;
     background: var(--wedding-paper) !important;
     background-color: var(--wedding-paper) !important;
+  }
+
+  .venue-heading-section,
+  .venue-section {
+    background: #fff !important;
+    background-color: #fff !important;
+  }
+
+  #dettagli,
+  #regali {
+    background: var(--wedding-ink) !important;
+    background-color: var(--wedding-ink) !important;
+  }
+
+  #dettagli .heading {
+    color: var(--wedding-paper) !important;
   }
 
   .wedding-section.alt,
