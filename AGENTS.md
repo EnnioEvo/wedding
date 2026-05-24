@@ -1,70 +1,86 @@
 # Repository Notes
 
 Landing page statica per il matrimonio di Ennio e Miriam, basata su un export
-Webflow "Lovio" e personalizzata in runtime con JavaScript/CSS locali.
+Webflow "Lovio" usato come base visuale, con contenuti e comportamento custom in
+file locali. Il progetto deve restare minimale: niente build step, niente
+framework, niente backend.
 
 ## Regole operative
 
-- Leggi prima di modificare: questa repo e' piccola, ma `index.html` contiene molto
-  markup Webflow generato.
-- Fai modifiche chirurgiche. Evita refactor generali del markup esportato.
-- I contenuti principali della landing stanno in `lovio_files/wedding-preinit.js`.
+- Leggi prima di modificare: la repo e' piccola, ma mantiene CSS/vendor Webflow.
+- Fai modifiche chirurgiche. Evita refactor generali dell'export Webflow legacy.
+- I contenuti principali stanno in `lovio_files/wedding-content.js`.
+- Il rendering della pagina sta in `lovio_files/wedding-render.js`.
+- Il comportamento runtime sta in `lovio_files/wedding.js`.
 - Lo stile custom sta in `lovio_files/wedding.css`.
-- Il comportamento runtime custom sta in `lovio_files/wedding.js`.
-- Prima di dichiarare concluso, apri la pagina in browser o servi la cartella e
-  verifica almeno hero, sezioni, mobile e console.
+- Gli asset usati dalla pagina stanno in `assets/`; `lovio_files/` contiene anche
+  asset/vendor legacy dell'export.
+- Prima di dichiarare concluso, servi la cartella e verifica almeno hero,
+  sezioni, mobile e console.
 
 ## Mappa rapida
 
 - `index.html`
   - Entry point statico.
-  - E' in gran parte markup Webflow originale.
-  - Include `lovio_files/wedding.css` nel `<head>`.
-  - A fine body carica, in ordine:
-    - `lovio_files/wedding-preinit.js`
+  - Contiene solo head, navbar shell, `<main data-wedding-page>` e script.
+  - Include, in ordine:
+    - `lovio_files/lovio.webflow.39528b056.css`
+    - `lovio_files/wedding.css`
+    - `lovio_files/wedding-content.js`
+    - `lovio_files/wedding-render.js`
     - `lovio_files/jquery-3.5.1.min.dc5e7f18c8.js`
     - `lovio_files/webflow.cc3e285b5.js`
     - `lovio_files/wedding.js`
-  - Modificalo solo se devi cambiare asset/script globali, meta fallback o la
-    struttura Webflow usata come base.
+  - Modificalo solo se devi cambiare asset/script globali, meta fallback o shell
+    HTML.
 
-- `lovio_files/wedding-preinit.js`
-  - File piu' importante per i contenuti.
-  - Imposta lingua, title e meta description/Open Graph/Twitter.
-  - Ripulisce classi/stili/attributi ARIA generati da Webflow.
-  - Ricostruisce la navigazione.
-  - Personalizza hero e immagini:
-    - `lovio_files/pictures/photos/left.jpeg`
-    - `lovio_files/pictures/photos/right.jpeg`
-    - `lovio_files/pictures/photos/central.jpeg`
-  - Svuota `.overflow` lasciando la hero e reinserisce tutte le sezioni custom:
-    - `#save-the-date`
-    - divisore decorativo
-    - `#storia`
-    - capitoli storia con `storyFeature(...)`
-    - `#dettagli`
-    - `#rsvp`
-    - `#galleria`
-    - footer
-  - Helper interni: `forceImage`, `storyFeature`, `detailCard`,
-    `giftDestination`, `giftCopyRow`, `formField`, `escapeHtml`, map iframe.
+- `lovio_files/wedding-content.js`
+  - File piu' importante per modificare testi e contenuti.
+  - Espone `window.WEDDING_CONTENT`.
+  - Contiene meta, nav, hero, save the date, capitoli storia, luoghi, dettagli,
+    regali/IBAN, RSVP, galleria e asset decorativi.
+  - Aggiorna qui il fallback della galleria quando aggiungi immagini che devono
+    funzionare anche su GitHub Pages senza directory listing.
+
+- `lovio_files/wedding-render.js`
+  - Legge `window.WEDDING_CONTENT` e monta la pagina dentro
+    `[data-wedding-page]`.
+  - Imposta title/meta, ricostruisce la navigazione e genera le sezioni:
+    `#home`, `#save-the-date`, `#storia`, `#luoghi`, `#dettagli`, `#regali`,
+    `#rsvp`, `#galleria` e footer.
+  - Tienilo come renderer semplice. Evita di metterci logica runtime o testi
+    lunghi.
+
+- `lovio_files/wedding.js`
+  - Countdown tramite `[data-countdown]` e `[data-target-date]`.
+  - Submit RSVP solo in anteprima: previene submit, mostra messaggio, resetta form.
+  - Copia IBAN/intestatario con Clipboard API + fallback.
+  - Chiude il menu mobile Webflow quando si clicca un link nav.
+  - Scroll iniziale su hash.
+  - Render galleria da directory listing se disponibile, con fallback da
+    `data-gallery-fallback`.
+  - Reveal-on-scroll con `IntersectionObserver`.
 
 - `lovio_files/wedding.css`
   - Override visuali custom della landing.
   - Palette principale in `:root`.
   - Nasconde cart Webflow e badge.
-  - Stili per logo/nav, hero override, countdown, storia, dettagli/mappe,
-    regali/IBAN, RSVP, galleria, footer, reveal-on-scroll e responsive.
+  - Organizzato per sezioni: base, nav/hero, sezioni condivise, save the date,
+    storia/luoghi, dettagli/mappe, galleria, RSVP, regali, footer/reveal,
+    responsive.
   - Contiene media query per `991px`, `767px`, `479px`.
 
-- `lovio_files/wedding.js`
-  - Countdown tramite `[data-countdown]`.
-  - Submit RSVP solo in anteprima: previene submit, mostra messaggio, resetta form.
-  - Copia IBAN/intestatario con Clipboard API + fallback.
-  - Scroll iniziale su hash.
-  - Render galleria da directory listing se disponibile, con fallback da
-    `data-gallery-fallback`.
-  - Reveal-on-scroll con `IntersectionObserver`.
+- `assets/`
+  - Asset usati dalla pagina pubblica.
+  - Struttura:
+    - `assets/images/hero/`
+    - `assets/images/story/`
+    - `assets/images/venues/`
+    - `assets/images/gallery/`
+    - `assets/images/decor/`
+    - `assets/icons/`
+  - Quando aggiungi una foto alla galleria, preferisci un nome file leggibile
+    senza spazi e aggiorna `wedding-content.js`.
 
 - `lovio_files/lovio.webflow.39528b056.css`
   - CSS Webflow originale. Evita modifiche salvo necessita' forte.
@@ -72,16 +88,9 @@ Webflow "Lovio" e personalizzata in runtime con JavaScript/CSS locali.
 - `lovio_files/webflow.cc3e285b5.js`, `jquery-*.js`, `webfont.js`, `css.css`
   - Vendor/Webflow/fonts. Trattali come generati.
 
-- `lovio_files/pictures/photos/`
-  - Foto principali per hero e capitoli storia.
-
-- `lovio_files/pictures/photos/gallery/`
-  - Foto bonus per la galleria. Aggiungere immagini qui e' sufficiente quando il
-    server espone directory listing; altrimenti aggiorna `data-gallery-fallback`
-    in `wedding-preinit.js`.
-
-- `lovio_files/pictures/`
-  - Asset decorativi (`seal`, `rings`, ecc.).
+- `lovio_files/pictures/` e altri asset `lovio_files/*`
+  - Asset legacy dell'export e copie storiche. Non usarli per nuovi riferimenti
+    se l'asset esiste gia' in `assets/`.
 
 - `CNAME`
   - Dominio GitHub Pages/custom domain.
@@ -95,17 +104,25 @@ problemi di path, servi la root:
 python3 -m http.server 8000
 ```
 
-Poi apri `http://localhost:8000/`.
+Poi apri `http://localhost:8000/`. Se la porta e' occupata, usa una porta libera,
+per esempio:
+
+```bash
+python3 -m http.server 8001
+```
 
 ## Cose da sapere prima di cambiare contenuti
 
 - La data visibile nei contenuti e' `17 Ottobre 2026`.
-- In `wedding-preinit.js` il ricevimento e' mostrato come Baglio della Luna,
-  Partinico, ma l'indirizzo testuale e' `Via La Ghiaia, 7, 54021 Bagnone MS`.
-  Verificare prima di correggere.
+- Il target countdown e' `2026-10-17T11:00:00+02:00` in
+  `lovio_files/wedding-content.js`.
+- Il ricevimento e' mostrato come Baglio della Luna, Partinico, ma l'indirizzo
+  testuale e' `Via La Ghiaia, 7, 54021 Bagnone MS`. Verificare prima di
+  correggere.
 - L'RSVP non persiste dati: e' una conferma locale/anteprima.
 - La galleria prova a leggere il listing della directory; su GitHub Pages spesso
-  potrebbe non esserci listing, quindi il fallback e' importante.
+  potrebbe non esserci listing, quindi il fallback in `wedding-content.js` e'
+  importante.
 
 ## Verifica consigliata
 
@@ -113,3 +130,10 @@ Poi apri `http://localhost:8000/`.
 - Controllo manuale desktop e mobile.
 - Console browser senza errori JS.
 - Hero, countdown, mappe, copia IBAN, form RSVP e galleria funzionanti.
+- Controllo sintassi JS:
+
+```bash
+node --check lovio_files/wedding-content.js
+node --check lovio_files/wedding-render.js
+node --check lovio_files/wedding.js
+```
