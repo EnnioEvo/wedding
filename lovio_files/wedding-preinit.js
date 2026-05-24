@@ -13,11 +13,11 @@
   }
 
   document.title = "Ennio e Miriam - Matrimonio";
-  setMeta('meta[name="description"]', "Ennio e Miriam celebrano il loro matrimonio il 3 ottobre 2026 a Palermo e Partinico.");
+  setMeta('meta[name="description"]', "Ennio e Miriam celebrano il loro matrimonio il 17 Ottobre 2026 a Palermo e Partinico.");
   setMeta('meta[property="og:title"]', "Ennio e Miriam - Matrimonio");
-  setMeta('meta[property="og:description"]', "3 ottobre 2026: cerimonia a Palermo e ricevimento a Baglio della Luna, Partinico.");
+  setMeta('meta[property="og:description"]', "17 Ottobre 2026: cerimonia a Palermo e ricevimento a Baglio della Luna, Partinico.");
   setMeta('meta[property="twitter:title"]', "Ennio e Miriam - Matrimonio");
-  setMeta('meta[property="twitter:description"]', "3 ottobre 2026: cerimonia a Palermo e ricevimento a Baglio della Luna, Partinico.");
+  setMeta('meta[property="twitter:description"]', "17 Ottobre 2026: cerimonia a Palermo e ricevimento a Baglio della Luna, Partinico.");
 
   document.querySelectorAll("[data-w-id], .border-nav, .dropdown-list, .dropdown-icon, .overflow-portfolio").forEach(function (node) {
     node.removeAttribute("style");
@@ -91,8 +91,8 @@
     '<div class="content">',
     '<div class="block-heading margin">',
     '<div class="wedding-eyebrow">Save the date</div>',
-    '<h2 class="heading">Ci sposiamo<br>Sabato 3 ottobre 2026.</h2>',
-    '<p class="wedding-lead">La cerimonia sarà alle 11:00 presso la Chiesa Santa Caterina di Palermo. <br> Dalle 13:00 festeggeremo insieme a Baglio della Luna, Partinico.</p>',
+    '<h2 class="heading">Ci sposiamo<br>Sabato 17 Ottobre 2026.</h2>',
+    '<p class="wedding-lead">La cerimonia sarà alle 11:00 presso la Chiesa Santa Maria della Pietà di Palermo. <br> Dalle 13:00 festeggeremo insieme a Baglio della Luna, Partinico.</p>',
     '</div>',
     '<div class="countdown-grid" aria-label="Countdown al matrimonio">',
     '<div class="countdown-card"><div class="countdown-number" data-countdown="days">0</div><div class="countdown-label">Giorni</div></div>',
@@ -133,9 +133,9 @@
     '<h2 class="heading">Dove e quando</h2>',
     '</div>',
     '<div class="details-grid">',
-    detailCard("Data e orari", "Sabato 3 ottobre 2026<br>Cerimonia alle 11:00<br>Ricevimento dalle 13:00 alle 19:00"),
+    detailCard("Data e orari", "Sabato 17 Ottobre 2026<br>Cerimonia alle 11:00<br>Ricevimento a seguire"),
     // detailCard("Cerimonia", "Chiesa Santa Caterina di Palermo<br>Un momento raccolto per iniziare insieme la giornata."),
-    '<div class="wedding-card map-card"><h3 class="wedding-card-title">Cerimonia</h3><p class="wedding-card-text"> <i>La nostra promessa</i><br>Chiesa Santa Caterina di Palermo<br>P.za Bellini, 1, 90133 Palermo PA</p><div class="map-placeholder">' + mapChurchFrame() + '</div></div>',
+    '<div class="wedding-card map-card"><h3 class="wedding-card-title">Cerimonia</h3><p class="wedding-card-text"> <i>La nostra promessa</i><br>Chiesa Santa Maria della Pietà<br>P.za Bellini, 1, 90133 Palermo PA</p><div class="map-placeholder">' + mapChurchFrame() + '</div></div>',
     '<div class="wedding-card map-card"><h3 class="wedding-card-title">Ricevimento</h3><p class="wedding-card-text"> <i>Pranzo, brindisi e festa fino al tramonto.</i><br>Baglio della Luna, Partinico<br>Via La Ghiaia, 7, 54021 Bagnone MS</p><div class="map-placeholder">' + mapWeddingFrame() + '</div></div>',
 
     '</div>',
@@ -192,7 +192,7 @@
     '<div class="content">',
     '<div class="border-footer"></div>',
     '<div class="footer-initials">E + M</div>',
-    '<div class="footer-date">3 ottobre 2026</div>',
+    '<div class="footer-date">17 Ottobre 2026</div>',
     '<div class="footer-love">Made with love</div>',
     '</div>',
     '</footer>'
@@ -264,12 +264,12 @@
     return '<iframe src="' + src + '" width="300" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
   }
   function mapChurchFrame() {
-    // Chiesa di Santa Caterina
-    return mapFrame("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12556.28587205697!2d13.345676689877665!3d38.11527170000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319e58b0e28c325%3A0x5037f4ed3b7411d1!2sChiesa%20e%20Monastero%20di%20Santa%20Caterina%20d&#39;Alessandria!5e0!3m2!1sit!2sit!4v1777821141426!5m2!1sit!2sit");
+    // Chiesa di Santa Maria della Pietà
+    return mapFrame("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10558.169101330592!2d13.363499350817092!3d38.11780486771996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319e52ede184e8b%3A0x58413da94c6faeb6!2sChiesa%20Parrocchiale%20di%20Santa%20Maria%20della%20Piet%C3%A0!5e0!3m2!1sit!2sit!4v1779611121087!5m2!1sit!2sit");
   }
 
   function mapWeddingFrame() {
     // Baglio della Luna
-    return mapFrame("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23741.24403720051!2d13.008149351179814!3d37.99762170909076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319891f05441005%3A0x61ffb7836984642d!2sIl%20Baglio%20della%20Luna!5e0!3m2!1sit!2sit!4v1777882576718!5m2!1sit!2sit");
+    return mapFrame("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d179182.84374437958!2d12.878427201624078!3d38.03326953561897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319891f05441005%3A0x61ffb7836984642d!2sIl%20Baglio%20della%20Luna!5e0!3m2!1sit!2sit!4v1779611284597!5m2!1sit!2sit");
   }
 })();

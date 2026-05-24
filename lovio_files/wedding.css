@@ -814,3 +814,15 @@ button {
     left: 4px;
   }
 }
+
+/* Make the card a flex container to align items vertically */
+.wedding-card.map-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure the card fills the available height */
+}
+
+/* Push the map placeholder to the bottom */
+.wedding-card.map-card .map-placeholder {
+  margin-top: auto;
+}

@@ -1,5 +1,5 @@
 (function () {
-  var targetDate = new Date("2026-10-03T11:00:00+02:00");
+  var targetDate = new Date("2026-10-17T11:00:00+02:00");
   var countdownNodes = {
     days: document.querySelector('[data-countdown="days"]'),
     hours: document.querySelector('[data-countdown="hours"]'),
