@@ -362,10 +362,11 @@ button {
   align-items: center;
 }
 
-.venue-section .overflow-image {
+.wedding-story-section.venue-section .overflow-image {
   max-width: 520px;
   margin-left: auto;
   margin-right: auto;
+  transform: none;
 }
 
 .venue-section .image {

@@ -43,7 +43,6 @@ Webflow "Lovio" e personalizzata in runtime con JavaScript/CSS locali.
     - `#storia`
     - capitoli storia con `storyFeature(...)`
     - `#dettagli`
-    - `#regali`
     - `#rsvp`
     - `#galleria`
     - footer
