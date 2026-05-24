@@ -175,6 +175,26 @@ button {
   padding: 28px 16px;
 }
 
+#save-the-date {
+  background: var(--wedding-ink);
+}
+
+#save-the-date .heading,
+#save-the-date .wedding-lead,
+#save-the-date .countdown-number,
+#save-the-date .countdown-label {
+  color: var(--wedding-paper);
+}
+
+#save-the-date .wedding-eyebrow {
+  color: rgba(251, 248, 242, .74);
+}
+
+#save-the-date .countdown-card {
+  border-color: rgba(251, 248, 242, .24);
+  background: rgba(255, 255, 255, .08);
+}
+
 .countdown-number {
   color: var(--wedding-ink);
   font-family: Marcellus, sans-serif;
@@ -201,6 +221,24 @@ button {
   grid-template-columns: 1fr auto 1fr;
   gap: 14px;
   position: relative;
+}
+
+.save-date-divider {
+  background: linear-gradient(
+    to bottom,
+    var(--wedding-ink) 0,
+    var(--wedding-ink) 50%,
+    var(--wedding-paper) 50%,
+    var(--wedding-paper) 100%
+  );
+}
+
+.save-date-divider .cut-line {
+  background-image: linear-gradient(90deg, rgba(251, 248, 242, .58) 50%, transparent 0);
+}
+
+.save-date-divider .scissors-mark {
+  border-color: rgba(251, 248, 242, .46);
 }
 
 .cut-line {
@@ -733,14 +771,36 @@ button {
     background-color: #fff !important;
   }
 
+  #save-the-date,
   #dettagli,
   #regali {
     background: var(--wedding-ink) !important;
     background-color: var(--wedding-ink) !important;
   }
 
+  .save-date-divider {
+    background: linear-gradient(
+      to bottom,
+      var(--wedding-ink) 0,
+      var(--wedding-ink) 50%,
+      var(--wedding-paper) 50%,
+      var(--wedding-paper) 100%
+    ) !important;
+    background-color: transparent !important;
+  }
+
+  #save-the-date .heading,
+  #save-the-date .wedding-lead,
+  #save-the-date .countdown-number,
+  #save-the-date .countdown-label,
   #dettagli .heading {
     color: var(--wedding-paper) !important;
+  }
+
+  #save-the-date .countdown-card {
+    background: rgba(255, 255, 255, .08) !important;
+    background-color: rgba(255, 255, 255, .08) !important;
+    border-color: rgba(251, 248, 242, .24) !important;
   }
 
   .wedding-section.alt,

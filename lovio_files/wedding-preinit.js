@@ -102,7 +102,7 @@
     '</div>',
     '</div>',
     '</section>',
-    '<section class="section wedding-section compact reveal-on-scroll" aria-label="Divisore decorativo">',
+    '<section class="section wedding-section compact save-date-divider reveal-on-scroll" aria-label="Divisore decorativo">',
     '<div class="cut-divider">',
     '<div class="scissors-mark" aria-hidden="true">✂</div>',
     '<div class="cut-line"></div>',
