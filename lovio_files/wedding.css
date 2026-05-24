@@ -43,7 +43,6 @@ button {
 .paragraph,
 .wedding-lead,
 .wedding-card-text,
-.venue-text,
 .gift-text,
 .map-placeholder,
 .footer-date,
@@ -346,46 +345,31 @@ button {
   opacity: 1 !important;
 }
 
+.venue-heading-section,
 .venue-section {
-  padding-top: 42px;
-  padding-bottom: 42px;
+  background: var(--wedding-paper);
 }
 
-.venue-grid {
-  width: 100%;
-  max-width: 1180px;
-  grid-column-gap: 58px;
-  grid-row-gap: 34px;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+.venue-heading-section {
+  padding-bottom: 18px;
+}
+
+.venue-section {
+  padding-top: 24px;
+}
+
+.venue-section .grid-2-columns {
   align-items: center;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
 }
 
-.venue-copy {
-  max-width: 760px;
-  grid-column: span 7;
-  padding: 0;
+.venue-section .overflow-image {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.venue-text {
-  color: var(--wedding-muted);
-  margin: 0;
-  font-size: 22px;
-  line-height: 175%;
-}
-
-.venue-image-wrap {
-  grid-column: span 5;
-  background: var(--wedding-cream);
-  overflow: hidden;
-}
-
-.venue-image {
-  width: 100%;
-  height: 520px;
-  object-fit: cover;
+.venue-section .image {
+  aspect-ratio: 4 / 5;
   display: block;
 }
 
@@ -733,7 +717,6 @@ button {
   .rsvp-panel,
   .gift-panel,
   .wedding-card,
-  .venue-image-wrap,
   .countdown-card,
   .gift-copy-row,
   .form-field input,
@@ -764,23 +747,6 @@ button {
 
   .details-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .venue-grid {
-    min-height: 0;
-  }
-
-  .venue-copy {
-    padding: 58px 6vw;
-  }
-
-  .venue-text {
-    font-size: 20px;
-  }
-
-  .venue-image-wrap,
-  .venue-image {
-    height: 480px;
   }
 
   .gallery-grid {
@@ -822,22 +788,6 @@ button {
     grid-column: 1 / -1;
   }
 
-  .venue-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .venue-copy {
-    max-width: none;
-    grid-column: 1 / -1;
-    padding: 44px 24px;
-  }
-
-  .venue-image-wrap,
-  .venue-image {
-    grid-column: 1 / -1;
-    height: 420px;
-  }
-
   .gallery-grid {
     column-count: 2;
   }
@@ -873,19 +823,6 @@ button {
   .wedding-card,
   .wedding-card.map-card {
     grid-column: 1 / -1;
-  }
-
-  .venue-copy {
-    padding: 38px 20px;
-  }
-
-  .venue-text {
-    font-size: 18px;
-  }
-
-  .venue-image-wrap,
-  .venue-image {
-    height: 340px;
   }
 
   .countdown-number {

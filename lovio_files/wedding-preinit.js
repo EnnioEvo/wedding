@@ -44,7 +44,7 @@
       '<div class="wedding-nav-links">',
       navLink("La data", "#save-the-date"),
       navLink("Storia", "#storia"),
-      navLink("Luoghi", "#chiesa"),
+      navLink("Luoghi", "#luoghi"),
       "</div>",
       '<a href="#home" class="brand w-nav-brand"><div class="wedding-logo">E + M</div></a>',
       '<div class="wedding-nav-links right">',
@@ -127,21 +127,32 @@
     storyFeature("05", "Un nuovo quotidiano", "I nostri primi mobili Ikea", "Abbiamo imparato a condividere la semplicità della vita quotidiana.", "pictures/photos/05_i_nostri_primi_mobili_ikea.jpeg", false, "lovio_files/610c8b9392065e16f1e8152e_flower_5.png", "flower---b"),
     storyFeature("06", "Il nostro presente", "La vita a Roma", "Tra lavoro, casa e progetti, Roma è diventata il posto da cui guardare al futuro e prepararci al nostro sì.", "pictures/photos/06_la_vita_a_roma.jpeg", true, "lovio_files/610b43d611194a874e2d3f7f_flower_2.png", "flower---a"),
     storyFeature("07", "Ha detto sì", "La proposta", "La decisione di passare il resto della nostra vita insieme.", "pictures/photos/07d_la_proposta.jpeg", false, "lovio_files/610c8b9392065e16f1e8152e_flower_5.png", "flower---a"),
+    '<section id="luoghi" class="section wedding-section venue-heading-section reveal-on-scroll">',
+    '<div class="content">',
+    '<div class="block-heading margin">',
+    '<div class="wedding-eyebrow">I luoghi</div>',
+    '<h2 class="heading">Chiesa e Location</h2>',
+    '<p class="wedding-lead">I posti che abbiamo scelto per il nostro sì e per festeggiare insieme.</p>',
+    '</div>',
+    '</div>',
+    '</section>',
     venueFeature(
-      "chiesa",
       "La Chiesa",
       "Santa Maria della Pietà",
       "Per il nostro 'Sì' abbiamo scelto un luogo che ci ha emozionato fin da subito: la Chiesa di Santa Maria della Pietà. Edificata alla fine del XVII secolo, è una delle chiese barocche più affascinanti di Palermo. Al suo interno custodisce i meravigliosi stucchi del Serpotta e una suggestiva grata a forma di sole nascente. Un luogo maestoso, intriso di storia e arte, che farà da cornice al nostro amore.",
       "santa_maria_della_pieta.jpeg",
-      true
+      true,
+      "lovio_files/610c8b9392065e16f1e8152e_flower_5.png",
+      "flower---a"
     ),
     venueFeature(
-      "location",
       "La Location",
       "Baglio della Luna",
       "Il Baglio della Luna è un'antica tenuta dell'Ottocento, una struttura rustica circondata dalle campagne di Partinico, tra prati ampi e alberi secolari. Abbiamo pensato che i suoi giardini e la sua atmosfera romantica fossero lo sfondo perfetto per condividere con voi il nostro primo pranzo da marito e moglie, godendoci insieme una festa all'aperto immersi nel verde.",
       "baglio_della_luna.jpeg",
-      false
+      false,
+      "lovio_files/610b43d611194a874e2d3f7f_flower_2.png",
+      "flower---b"
     ),
     '<section id="dettagli" class="section wedding-section alt reveal-on-scroll">',
     '<div class="content">',
@@ -253,25 +264,31 @@
     ].join("");
   }
 
-  function venueFeature(id, eyebrow, title, text, image, imageFirst) {
+  function venueFeature(eyebrow, title, text, image, imageFirst, flowerSrc, flowerClass) {
     var textBlock = [
-      '<div class="venue-copy">',
-      '<div class="wedding-eyebrow">' + eyebrow + '</div>',
+      '<div class="block-text venue-copy">',
+      '<img src="lovio_files/610b3993bc98ff5499b83f82_subtitle.png" loading="lazy" alt="" width="62" class="image-subtitle">',
+      '<div class="subtitle">' + eyebrow + '<br></div>',
       '<h2 class="heading">' + title + '</h2>',
-      '<p class="venue-text">' + text + '</p>',
+      '<p class="paragraph">' + text + '</p>',
       '</div>'
     ].join("");
     var imageBlock = [
-      '<div class="venue-image-wrap">',
-      '<img class="venue-image" src="' + image + '" alt="' + title + '" loading="lazy">',
+      '<div class="block-image wedding-story-image venue-image-block">',
+      '<div class="overflow-image">',
+      '<img class="image venue-image" src="' + image + '" alt="' + title + '" loading="lazy">',
+      '</div>',
+      '<img src="' + flowerSrc + '" loading="eager" alt="" class="' + flowerClass + '">',
       '</div>'
     ].join("");
 
     return [
-      '<section id="' + id + '" class="section wedding-section venue-section reveal-on-scroll">',
-      '<div class="venue-grid">',
+      '<section class="section wedding-story-section venue-section reveal-on-scroll">',
+      '<div class="content">',
+      '<div class="w-layout-grid grid-2-columns venue-grid">',
       imageFirst ? imageBlock : textBlock,
       imageFirst ? textBlock : imageBlock,
+      '</div>',
       '</div>',
       '</section>'
     ].join("");
