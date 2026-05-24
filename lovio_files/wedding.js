@@ -62,7 +62,10 @@
   if (window.location.hash) {
     window.setTimeout(function () {
       var target = document.querySelector(window.location.hash);
-      if (target) target.scrollIntoView({ block: "start" });
+      if (target) {
+        target.classList.add("is-visible");
+        target.scrollIntoView({ block: "start" });
+      }
     }, 150);
   }
 

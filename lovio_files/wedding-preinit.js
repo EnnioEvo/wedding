@@ -44,10 +44,11 @@
       '<div class="wedding-nav-links">',
       navLink("La data", "#save-the-date"),
       navLink("Storia", "#storia"),
-      navLink("Dettagli", "#dettagli"),
+      navLink("Luoghi", "#chiesa"),
       "</div>",
       '<a href="#home" class="brand w-nav-brand"><div class="wedding-logo">E + M</div></a>',
       '<div class="wedding-nav-links right">',
+      navLink("Dettagli", "#dettagli"),
       navLink("Regali", "#regali"),
       navLink("La tua conferma", "#rsvp"),
       navLink("Galleria", "#galleria"),
@@ -67,7 +68,7 @@
     var subtitle = hero.querySelector(".subtitle");
     var heading = hero.querySelector(".heading-hero");
     var link = hero.querySelector(".link");
-    if (subtitle) subtitle.innerHTML = "3 ottobre 2026<br>";
+    if (subtitle) subtitle.innerHTML = "17 Ottobre 2026<br>";
     if (heading) heading.innerHTML = "Ennio e<br>Miriam";
     if (link) {
       link.textContent = "Conferma la tua presenza";
@@ -126,6 +127,22 @@
     storyFeature("05", "Un nuovo quotidiano", "I nostri primi mobili Ikea", "Abbiamo imparato a condividere la semplicità della vita quotidiana.", "pictures/photos/05_i_nostri_primi_mobili_ikea.jpeg", false, "lovio_files/610c8b9392065e16f1e8152e_flower_5.png", "flower---b"),
     storyFeature("06", "Il nostro presente", "La vita a Roma", "Tra lavoro, casa e progetti, Roma è diventata il posto da cui guardare al futuro e prepararci al nostro sì.", "pictures/photos/06_la_vita_a_roma.jpeg", true, "lovio_files/610b43d611194a874e2d3f7f_flower_2.png", "flower---a"),
     storyFeature("07", "Ha detto sì", "La proposta", "La decisione di passare il resto della nostra vita insieme.", "pictures/photos/07d_la_proposta.jpeg", false, "lovio_files/610c8b9392065e16f1e8152e_flower_5.png", "flower---a"),
+    venueFeature(
+      "chiesa",
+      "La Chiesa",
+      "Santa Maria della Pietà",
+      "Per il nostro 'Sì' abbiamo scelto un luogo che ci ha emozionato fin da subito: la Chiesa di Santa Maria della Pietà. Edificata alla fine del XVII secolo, è una delle chiese barocche più affascinanti di Palermo. Al suo interno custodisce i meravigliosi stucchi del Serpotta e una suggestiva grata a forma di sole nascente. Un luogo maestoso, intriso di storia e arte, che farà da cornice al nostro amore.",
+      "santa_maria_della_pieta.jpeg",
+      true
+    ),
+    venueFeature(
+      "location",
+      "La Location",
+      "Baglio della Luna",
+      "Il Baglio della Luna è un'antica tenuta dell'Ottocento, una struttura rustica circondata dalle campagne di Partinico, tra prati ampi e alberi secolari. Abbiamo pensato che i suoi giardini e la sua atmosfera romantica fossero lo sfondo perfetto per condividere con voi il nostro primo pranzo da marito e moglie, godendoci insieme una festa all'aperto immersi nel verde.",
+      "baglio_della_luna.jpeg",
+      false
+    ),
     '<section id="dettagli" class="section wedding-section alt reveal-on-scroll">',
     '<div class="content">',
     '<div class="block-heading margin">',
@@ -231,6 +248,30 @@
       imageFirst ? imageBlock : textBlock,
       imageFirst ? textBlock : imageBlock,
       '</div>',
+      '</div>',
+      '</section>'
+    ].join("");
+  }
+
+  function venueFeature(id, eyebrow, title, text, image, imageFirst) {
+    var textBlock = [
+      '<div class="venue-copy">',
+      '<div class="wedding-eyebrow">' + eyebrow + '</div>',
+      '<h2 class="heading">' + title + '</h2>',
+      '<p class="venue-text">' + text + '</p>',
+      '</div>'
+    ].join("");
+    var imageBlock = [
+      '<div class="venue-image-wrap">',
+      '<img class="venue-image" src="' + image + '" alt="' + title + '" loading="lazy">',
+      '</div>'
+    ].join("");
+
+    return [
+      '<section id="' + id + '" class="section wedding-section venue-section reveal-on-scroll">',
+      '<div class="venue-grid">',
+      imageFirst ? imageBlock : textBlock,
+      imageFirst ? textBlock : imageBlock,
       '</div>',
       '</section>'
     ].join("");
