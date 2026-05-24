@@ -1,5 +1,8 @@
 (function () {
-  var targetDate = new Date("2026-10-17T11:00:00+02:00");
+  var countdownRoot = document.querySelector("[data-target-date]");
+  var targetDate = new Date(
+    countdownRoot ? countdownRoot.getAttribute("data-target-date") : "2026-10-17T11:00:00+02:00"
+  );
   var countdownNodes = {
     days: document.querySelector('[data-countdown="days"]'),
     hours: document.querySelector('[data-countdown="hours"]'),
@@ -27,6 +30,13 @@
 
   updateCountdown();
   window.setInterval(updateCountdown, 1000);
+
+  document.querySelectorAll(".nav-link").forEach(function (link) {
+    link.addEventListener("click", function () {
+      var openedButton = document.querySelector(".w-nav-button.w--open");
+      if (openedButton) openedButton.click();
+    });
+  });
 
   var form = document.getElementById("wedding-rsvp-form");
   var success = document.getElementById("rsvp-success");

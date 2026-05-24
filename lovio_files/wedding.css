@@ -1,3 +1,4 @@
+/* Tokens and base */
 :root {
   --wedding-ink: #506400;
   --wedding-muted: #68705a;
@@ -73,6 +74,7 @@ button {
   display: none !important;
 }
 
+/* Navigation and hero */
 .brand,
 .brand-mobile {
   text-decoration: none;
@@ -108,6 +110,11 @@ button {
   overflow-wrap: anywhere;
 }
 
+.image-subtitle {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 .image-hero---b,
 .flower-hero---b1,
 .flower-hero---b2 {
@@ -131,6 +138,7 @@ button {
   padding-bottom: 42px;
 }
 
+/* Shared sections */
 .wedding-eyebrow {
   color: var(--wedding-sage);
   letter-spacing: 2px;
@@ -151,6 +159,7 @@ button {
   line-height: 170%;
 }
 
+/* Save the date */
 .countdown-grid {
   width: 100%;
   max-width: 860px;
@@ -289,6 +298,7 @@ button {
   left: 50%;
 }
 
+/* Story and venues */
 .story-card {
   width: calc(50% - 34px);
   margin-bottom: 24px;
@@ -417,6 +427,7 @@ button {
   background: var(--wedding-ink);
 }
 
+/* Details and maps */
 #dettagli .heading {
   color: var(--wedding-paper);
 }
@@ -458,6 +469,7 @@ button {
   line-height: 185%;
 }
 
+/* Gallery */
 .gallery-grid {
   width: 100%;
   column-count: 4;
@@ -492,6 +504,7 @@ button {
   line-height: 165%;
 }
 
+/* RSVP */
 .rsvp-panel {
   width: 100%;
   max-width: 880px;
@@ -567,6 +580,7 @@ button {
   display: none;
 }
 
+/* Gifts */
 .gift-panel {
   width: 100%;
   max-width: 960px;
@@ -701,6 +715,7 @@ button {
   filter: brightness(0) invert(1);
 }
 
+/* Footer and reveal */
 .wedding-footer {
   text-align: center;
   padding-bottom: 40px;
@@ -939,14 +954,12 @@ button {
   }
 }
 
-/* Make the card a flex container to align items vertically */
 .wedding-card.map-card {
   display: flex;
   flex-direction: column;
-  height: 100%; /* Ensure the card fills the available height */
+  height: 100%;
 }
 
-/* Push the map placeholder to the bottom */
 .wedding-card.map-card .map-placeholder {
   margin-top: auto;
 }
