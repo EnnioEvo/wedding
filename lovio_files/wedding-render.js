@@ -224,9 +224,9 @@
       '<section id="regali" class="section wedding-section reveal-on-scroll">',
       '<div class="content">',
       '<div class="gift-panel">',
-      eyebrow(gift.eyebrow),
+      '<div class="wedding-eyebrow gift-eyebrow">' + allowedInlineHtml(gift.eyebrow) + "</div>",
       '<h2 class="gift-title">' + escapeHtml(gift.title) + "</h2>",
-      '<p class="gift-text gift-intro">' + escapeHtml(gift.text) + "</p>",
+      '<p class="gift-text gift-intro">' + allowedInlineHtml(gift.text) + "</p>",
       '<div class="gift-honeymoon" aria-label="Viaggio di nozze in Thailandia">',
       gift.honeymoonImages.map(honeymoonImage).join(""),
       "</div>",
@@ -353,5 +353,15 @@
       .replace(/"/g, "&quot;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;");
+  }
+
+  function allowedInlineHtml(value) {
+    return escapeHtml(value)
+      .replace(/\n/g, "<br>")
+      .replace(/&lt;br\s*\/?&gt;/gi, "<br>")
+      .replace(/&lt;b&gt;/gi, "<b>")
+      .replace(/&lt;\/b&gt;/gi, "</b>")
+      .replace(/&lt;strong&gt;/gi, "<strong>")
+      .replace(/&lt;\/strong&gt;/gi, "</strong>");
   }
 })();

@@ -609,6 +609,23 @@ button {
   font-size: 24px;
 }
 
+.gift-eyebrow b {
+  color: var(--wedding-ink);
+  display: inline-block;
+  margin-top: 8px;
+  font-family: Marcellus, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.gift-intro b,
+.gift-intro strong {
+  color: var(--wedding-ink);
+  font-weight: 700;
+}
+
 .gift-intro {
   max-width: 720px;
   margin: 0 auto 30px;

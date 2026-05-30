@@ -135,9 +135,9 @@
       ]
     },
     gift: {
-      eyebrow: "Viaggio di nozze </b> Thailandia 🌴",
+      eyebrow: "Viaggio di nozze",
       title: "La vostra presenza è il regalo più grande!",
-      text: "Ma se vuoi contribuire al nostro nuovo inizio assieme, abbiamo scelto la <b>Thailandia</b> per il nostro viaggio di nozze.",
+      text: "Ma se vuoi contribuire al nostro nuovo inizio assieme,<br> abbiamo scelto la <br> <b>Thailandia</b>🌴 <br> per il nostro viaggio di nozze.",
       caption: "Il nostro viaggio da sogno comincia tra templi, mare e luce d'Oriente.",
       honeymoonImages: [
         { src: "assets/images/honeymoon/thai1.jpg", alt: "Thailandia" },
