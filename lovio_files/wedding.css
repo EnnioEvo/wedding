@@ -1035,6 +1035,15 @@ button {
     padding: 28px 20px;
   }
 
+  .wedding-card,
+  .gift-panel,
+  .rsvp-panel,
+  .gift-copy-row,
+  .gift-bank-details summary {
+    background: #fff;
+    background-color: #fff;
+  }
+
   .gift-title {
     font-size: 34px;
   }

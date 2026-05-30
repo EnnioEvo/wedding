@@ -10,8 +10,8 @@
       { label: "Storia", href: "#storia" },
       { label: "Luoghi", href: "#luoghi" },
       { label: "Dettagli", href: "#dettagli" },
-      { label: "La tua conferma", href: "#rsvp" },
-      { label: "Galleria", href: "#galleria" }
+      { label: "Viaggio di nozze", href: "#regali" },
+      { label: "La tua conferma", href: "#rsvp" }
     ],
     hero: {
       date: "17 Ottobre 2026",
