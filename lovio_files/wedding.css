@@ -1028,6 +1028,14 @@ button {
     grid-row: 2;
   }
 
+  .wedding-story-section.venue-section .block-image {
+    grid-row: 1;
+  }
+
+  .wedding-story-section.venue-section .block-text {
+    grid-row: 2;
+  }
+
   .story-timeline:before {
     left: 7px;
   }
