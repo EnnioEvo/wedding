@@ -44,7 +44,15 @@
   var success = document.getElementById("rsvp-success");
   var error = document.getElementById("rsvp-error");
   var submitButton = form ? form.querySelector("[data-rsvp-submit]") : null;
+  var participantList = form ? form.querySelector("[data-rsvp-participants]") : null;
+  var addParticipantButton = form ? form.querySelector("[data-rsvp-add]") : null;
   var submitLabel = submitButton ? submitButton.textContent : "";
+
+  if (form && participantList && addParticipantButton) {
+    addParticipantButton.addEventListener("click", function () {
+      addParticipantRow();
+    });
+  }
 
   if (form && success && error) {
     form.addEventListener("submit", function (event) {
@@ -63,6 +71,7 @@
         .then(function () {
           success.hidden = false;
           form.reset();
+          resetAdditionalParticipants();
         })
         .catch(function (sendError) {
           console.error("RSVP email send failed", sendError);
@@ -179,19 +188,143 @@
       config.templateId,
       {
         name: getFormValue(formNode, "name"),
-        // attendance: getFormValue(formNode, "attendance"),
-        // confirming_for: getFormValue(formNode, "confirming-for"),
-        // dietary: getFormValue(formNode, "dietary"),
-        // submitted_at: new Date().toLocaleString("it-IT", {
-        //   dateStyle: "short",
-        //   timeStyle: "short"
-        // })
-        message: "Presenza:\n" + getFormValue(formNode, "attendance") + "\n\n" +
-          "Per chi altri stai confermando:\n" + getFormValue(formNode, "confirming-for") + "\n\n" +
-          "Dieta:\n" + getFormValue(formNode, "dietary")
+        message: formatRsvpMessage(formNode)
       },
       { publicKey: config.publicKey }
     );
+  }
+
+  function addParticipantRow() {
+    if (!participantList) return;
+
+    var participantNumber = getParticipantRows(form).length + 1;
+    var row = document.createElement("div");
+    var nameField = createParticipantField(
+      "Nome " + participantNumber,
+      "participant-name-" + participantNumber,
+      "Nome e cognome",
+      "data-rsvp-name"
+    );
+    var infoField = createParticipantField(
+      "Informazione inutile",
+      "participant-info-" + participantNumber,
+      "Tipo: ti piace mangiare gli omogeneizzati",
+      "data-rsvp-info"
+    );
+    var removeButton = document.createElement("button");
+
+    row.className = "rsvp-participant-row has-remove";
+    row.setAttribute("data-rsvp-participant", "");
+
+    removeButton.className = "rsvp-remove-button";
+    removeButton.type = "button";
+    removeButton.textContent = "Rimuovi";
+    removeButton.setAttribute("data-rsvp-remove", "");
+    removeButton.setAttribute("aria-label", "Rimuovi Nome " + participantNumber);
+    removeButton.addEventListener("click", function () {
+      row.remove();
+      renumberAdditionalParticipants();
+    });
+
+    row.appendChild(nameField);
+    row.appendChild(infoField);
+    row.appendChild(removeButton);
+    participantList.appendChild(row);
+  }
+
+  function createParticipantField(label, name, placeholder, dataAttribute) {
+    var field = document.createElement("div");
+    var fieldLabel = document.createElement("label");
+    var input = document.createElement("input");
+
+    field.className = "form-field";
+    fieldLabel.textContent = label;
+    fieldLabel.setAttribute("for", name);
+    input.id = name;
+    input.name = name;
+    input.type = "text";
+    input.placeholder = placeholder;
+    input.setAttribute(dataAttribute, "");
+
+    field.appendChild(fieldLabel);
+    field.appendChild(input);
+    return field;
+  }
+
+  function resetAdditionalParticipants() {
+    if (!participantList) return;
+    participantList.innerHTML = "";
+  }
+
+  function renumberAdditionalParticipants() {
+    if (!participantList) return;
+
+    Array.prototype.slice.call(participantList.querySelectorAll("[data-rsvp-participant]")).forEach(function (row, index) {
+      var participantNumber = index + 2;
+      var nameInput = row.querySelector("[data-rsvp-name]");
+      var nameLabel = nameInput && nameInput.parentElement ? nameInput.parentElement.querySelector("label") : null;
+      var infoInput = row.querySelector("[data-rsvp-info]");
+      var infoLabel = infoInput && infoInput.parentElement ? infoInput.parentElement.querySelector("label") : null;
+      var removeButton = row.querySelector("[data-rsvp-remove]");
+
+      updateParticipantControl(nameInput, nameLabel, "participant-name-" + participantNumber, "Nome " + participantNumber);
+      updateParticipantControl(infoInput, infoLabel, "participant-info-" + participantNumber, "Informazione inutile");
+
+      if (removeButton) {
+        removeButton.setAttribute("aria-label", "Rimuovi Nome " + participantNumber);
+      }
+    });
+  }
+
+  function updateParticipantControl(input, label, id, labelText) {
+    if (!input || !label) return;
+    input.id = id;
+    input.name = id;
+    label.setAttribute("for", id);
+    label.textContent = labelText;
+  }
+
+  function formatRsvpMessage(formNode) {
+    return [
+      "Presenza:",
+      getFormValue(formNode, "attendance"),
+      "",
+      "Partecipanti:",
+      formatParticipants(formNode),
+      "",
+      "Note alimentari:",
+      getFormValue(formNode, "dietary") || "Non indicate",
+      "",
+      "Inviato il:",
+      new Date().toLocaleString("it-IT", {
+        dateStyle: "short",
+        timeStyle: "short"
+      })
+    ].join("\n");
+  }
+
+  function formatParticipants(formNode) {
+    var participantIndex = 0;
+
+    return getParticipantRows(formNode).reduce(function (lines, row, index) {
+      var nameInput = row.querySelector("[data-rsvp-name]");
+      var infoInput = row.querySelector("[data-rsvp-info]");
+      var name = nameInput ? nameInput.value.trim() : "";
+      var info = infoInput ? infoInput.value.trim() : "";
+
+      if (index > 0 && !name && !info) return lines;
+
+      participantIndex += 1;
+      lines.push(String(participantIndex) + ". " + (name || "Nome non indicato"));
+      lines.push("   Cosa inutile: " + (info || "Non indicata"));
+      lines.push("");
+      return lines;
+    }, []).join("\n").trim();
+  }
+
+  function getParticipantRows(formNode) {
+    if (!formNode) return [];
+    return Array.prototype.slice.call(formNode.querySelectorAll("[data-rsvp-participant]"));
   }
 
   function getFormValue(formNode, name) {

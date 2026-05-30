@@ -292,9 +292,12 @@
       "</div>",
       '<div class="rsvp-panel">',
       '<form class="rsvp-form" id="wedding-rsvp-form">',
-      formField("Nome e cognome", "name", "text", "Il tuo nome", true),
-      '<div class="form-field"><label for="attendance">Parteciperai?</label><select id="attendance" name="attendance" required><option value="">Seleziona</option><option>✅ Sì ci sarò 😎</option><option>❌ No purtroppo non riuscirò 😞</option></select></div>',
-      '<div class="form-field full"><label for="confirming-for">Confermi anche per qualcun altro? (Opzionale)</label><textarea id="confirming-for" name="confirming-for" placeholder="Nomi di familiari, accompagnatori o persone incluse nella conferma"></textarea></div>',
+      '<div class="rsvp-participant-row is-primary" data-rsvp-participant>',
+      formField("Nome e cognome", "name", "text", "Il tuo nome", true, "data-rsvp-name"),
+      formField("Dicci anche una cosa inutile da sapere su di te (Opzionale)", "participant-info-1", "text", "Tipo: sbagli spesso il verso della maglietta", false, "data-rsvp-info"),
+      "</div>",
+      '<div class="form-field full"><label for="attendance">Parteciperai?</label><select id="attendance" name="attendance" required><option value="">Seleziona</option><option>✅ Sì ci sarò 😎</option><option>❌ No purtroppo non riuscirò 😞</option></select></div>',
+      '<div class="rsvp-add-row full"><p class="rsvp-add-question">Confermi anche per qualcun altro?</p><div class="rsvp-participants" data-rsvp-participants></div><button type="button" class="rsvp-add-button" data-rsvp-add>Aggiungi un&apos;altra persona</button></div>',
       '<div class="form-field full"><label for="dietary">Note alimentari (Opzionale)</label><textarea id="dietary" name="dietary" placeholder="Facci sapere se hai allergie o intolleranze"></textarea></div>',
       '<div class="form-field full rsvp-actions"><button type="submit" class="button w-button" data-rsvp-submit>Invia conferma</button><p class="rsvp-success" id="rsvp-success" data-rsvp-success hidden>' + escapeHtml(rsvp.success) + '</p><p class="rsvp-error" id="rsvp-error" data-rsvp-error hidden>' + escapeHtml(rsvp.error) + "</p></div>",
       "</form>",
@@ -304,11 +307,11 @@
     ].join("");
   }
 
-  function formField(label, name, type, placeholder, required) {
+  function formField(label, name, type, placeholder, required, attributes) {
     return [
       '<div class="form-field">',
       '<label for="' + name + '">' + escapeHtml(label) + "</label>",
-      '<input id="' + name + '" name="' + name + '" type="' + type + '" placeholder="' + escapeHtml(placeholder) + '"' + (required ? " required" : "") + ">",
+      '<input id="' + name + '" name="' + name + '" type="' + type + '" placeholder="' + escapeHtml(placeholder) + '"' + (required ? " required" : "") + (attributes ? " " + attributes : "") + ">",
       "</div>"
     ].join("");
   }

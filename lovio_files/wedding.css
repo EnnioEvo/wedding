@@ -524,6 +524,45 @@ button {
   grid-column: 1 / -1;
 }
 
+.rsvp-participant-row,
+.rsvp-add-row {
+  grid-column: 1 / -1;
+}
+
+.rsvp-participant-row {
+  grid-column-gap: 26px;
+  grid-row-gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: end;
+  display: grid;
+}
+
+.rsvp-participant-row.has-remove {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+}
+
+.rsvp-participants {
+  width: 100%;
+  grid-row-gap: 18px;
+  display: grid;
+}
+
+.rsvp-add-row {
+  grid-row-gap: 18px;
+  display: grid;
+}
+
+.rsvp-add-question {
+  color: var(--wedding-ink);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
 .form-field label {
   color: var(--wedding-ink);
   letter-spacing: 2px;
@@ -552,6 +591,30 @@ button {
 .form-field textarea {
   min-height: 130px;
   resize: vertical;
+}
+
+.rsvp-add-button,
+.rsvp-remove-button {
+  min-height: 46px;
+  border: 1px solid var(--wedding-line);
+  color: var(--wedding-ink);
+  background: #fff;
+  border-radius: 8px;
+  padding: 11px 16px;
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 130%;
+  cursor: pointer;
+}
+
+.rsvp-add-button {
+  justify-self: start;
+}
+
+.rsvp-add-button:hover,
+.rsvp-remove-button:hover {
+  border-color: var(--wedding-sage);
 }
 
 .rsvp-actions {
@@ -1078,6 +1141,15 @@ button {
   .rsvp-panel,
   .gift-panel {
     padding: 28px 20px;
+  }
+
+  .rsvp-participant-row,
+  .rsvp-participant-row.has-remove {
+    grid-template-columns: 1fr;
+  }
+
+  .rsvp-remove-button {
+    justify-self: start;
   }
 
   .wedding-card,
