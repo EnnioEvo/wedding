@@ -994,6 +994,21 @@ button {
     grid-template-columns: 1fr 1fr;
   }
 
+  .wedding-story-section:not(.venue-section) {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+
+  .wedding-story-section:not(.venue-section) .block-text {
+    grid-row: 1;
+    padding-top: 12px;
+    padding-bottom: 0;
+  }
+
+  .wedding-story-section:not(.venue-section) .block-image {
+    grid-row: 2;
+  }
+
   .story-timeline:before {
     left: 7px;
   }
