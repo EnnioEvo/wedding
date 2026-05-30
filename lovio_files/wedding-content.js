@@ -161,7 +161,14 @@
       eyebrow: "La tua conferma",
       title: "Conferma la tua presenza",
       deadline: "Entro il 31 Ago 2026",
-      success: "Grazie, la tua conferma è stata registrata in questa anteprima."
+      success: "Grazie, la tua conferma è stata inviata.",
+      error: "Non siamo riusciti a inviare la conferma. Riprova tra poco.",
+      sending: "Invio in corso...",
+      emailjs: {
+        publicKey: "m_i9Hvh1Jhy68tUam",
+        serviceId: "service_0cvcj0i",
+        templateId: "template_6o29gbc"
+      }
     },
     gallery: {
       eyebrow: "Se sei arrivato a questo punto...",

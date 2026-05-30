@@ -567,7 +567,15 @@ button {
   line-height: 150%;
 }
 
-.rsvp-success[hidden] {
+.rsvp-error {
+  color: #9d3f35;
+  margin: 0;
+  font-size: 15px;
+  line-height: 150%;
+}
+
+.rsvp-success[hidden],
+.rsvp-error[hidden] {
   display: none;
 }
 

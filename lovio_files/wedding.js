@@ -38,17 +38,39 @@
     });
   });
 
+  var rsvpContent = window.WEDDING_CONTENT ? window.WEDDING_CONTENT.rsvp : null;
+  var emailjsConfig = rsvpContent ? rsvpContent.emailjs : null;
   var form = document.getElementById("wedding-rsvp-form");
   var success = document.getElementById("rsvp-success");
-  if (form && success) {
+  var error = document.getElementById("rsvp-error");
+  var submitButton = form ? form.querySelector("[data-rsvp-submit]") : null;
+  var submitLabel = submitButton ? submitButton.textContent : "";
+
+  if (form && success && error) {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
+      hideRsvpStatus(success);
+      hideRsvpStatus(error);
+
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
-      success.hidden = false;
-      form.reset();
+
+      setRsvpSubmitting(true);
+
+      sendRsvp(form, emailjsConfig)
+        .then(function () {
+          success.hidden = false;
+          form.reset();
+        })
+        .catch(function (sendError) {
+          console.error("RSVP email send failed", sendError);
+          error.hidden = false;
+        })
+        .finally(function () {
+          setRsvpSubmitting(false);
+        });
     });
   }
 
@@ -141,6 +163,49 @@
     document.execCommand("copy");
     document.body.removeChild(input);
     return Promise.resolve();
+  }
+
+  function sendRsvp(formNode, config) {
+    if (!config || !config.serviceId || !config.templateId || !config.publicKey) {
+      return Promise.reject(new Error("Missing EmailJS RSVP configuration."));
+    }
+
+    if (!window.emailjs || typeof window.emailjs.send !== "function") {
+      return Promise.reject(new Error("EmailJS browser SDK is not available."));
+    }
+
+    return window.emailjs.send(
+      config.serviceId,
+      config.templateId,
+      {
+        name: getFormValue(formNode, "name"),
+        attendance: getFormValue(formNode, "attendance"),
+        confirming_for: getFormValue(formNode, "confirming-for"),
+        dietary: getFormValue(formNode, "dietary"),
+        submitted_at: new Date().toLocaleString("it-IT", {
+          dateStyle: "short",
+          timeStyle: "short"
+        })
+      },
+      { publicKey: config.publicKey }
+    );
+  }
+
+  function getFormValue(formNode, name) {
+    var value = new FormData(formNode).get(name);
+    return value ? String(value).trim() : "";
+  }
+
+  function setRsvpSubmitting(isSubmitting) {
+    if (!submitButton) return;
+    submitButton.disabled = isSubmitting;
+    submitButton.textContent = isSubmitting && rsvpContent && rsvpContent.sending
+      ? rsvpContent.sending
+      : submitLabel;
+  }
+
+  function hideRsvpStatus(node) {
+    node.hidden = true;
   }
 
   function initMobileHoneymoonTilt() {

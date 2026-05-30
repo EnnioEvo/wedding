@@ -296,7 +296,7 @@
       '<div class="form-field"><label for="attendance">Parteciperai?</label><select id="attendance" name="attendance" required><option value="">Seleziona</option><option>✅ Sì ci sarò 😎</option><option>❌ No purtroppo non riuscirò 😞</option></select></div>',
       '<div class="form-field full"><label for="confirming-for">Per chi altri stai confermando?</label><textarea id="confirming-for" name="confirming-for" placeholder="Nomi di familiari, accompagnatori o persone incluse nella conferma"></textarea></div>',
       '<div class="form-field full"><label for="dietary">Note alimentari</label><textarea id="dietary" name="dietary" placeholder="Allergie, intolleranze o preferenze"></textarea></div>',
-      '<div class="form-field full rsvp-actions"><button type="submit" class="button w-button">Invia conferma</button><p class="rsvp-success" id="rsvp-success" hidden>' + escapeHtml(rsvp.success) + "</p></div>",
+      '<div class="form-field full rsvp-actions"><button type="submit" class="button w-button" data-rsvp-submit>Invia conferma</button><p class="rsvp-success" id="rsvp-success" data-rsvp-success hidden>' + escapeHtml(rsvp.success) + '</p><p class="rsvp-error" id="rsvp-error" data-rsvp-error hidden>' + escapeHtml(rsvp.error) + "</p></div>",
       "</form>",
       "</div>",
       "</div>",
