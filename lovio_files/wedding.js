@@ -47,6 +47,19 @@
   var participantList = form ? form.querySelector("[data-rsvp-participants]") : null;
   var addParticipantButton = form ? form.querySelector("[data-rsvp-add]") : null;
   var submitLabel = submitButton ? submitButton.textContent : "";
+  var uselessInfoExamples = [
+    "ho il biglietto pronto per la turchia 🧑‍🦲",
+    "Mangio la pizza partendo dal cornicione",
+    "Nel film X tifavo per il cattivo",
+    "Una volta mi ha intervistato il TG",
+    "ho vinto il torneo di enigmistica",
+    "Riconosco la sottomarca delle patatine a occhi chiusi",
+    "Non mangio niente che sia verde",
+    "Posso mangiare 5 hamburger in un quarto d'ora",
+    "So toccarmi la lingua col naso",
+    "Parlo una lingua africana",
+    "Non calpesto mai le linee tra le mattonelle per strada", 
+  ];
 
   if (form && participantList && addParticipantButton) {
     addParticipantButton.addEventListener("click", function () {
@@ -206,9 +219,9 @@
       "data-rsvp-name"
     );
     var infoField = createParticipantField(
-      "Informazione inutile",
+      "Informazione superflua (Opzionale)",
       "participant-info-" + participantNumber,
-      "Tipo: ti piace mangiare gli omogeneizzati",
+      uselessInfoExamples[(participantNumber - 2) % uselessInfoExamples.length],
       "data-rsvp-info"
     );
     var removeButton = document.createElement("button");
@@ -268,7 +281,7 @@
       var removeButton = row.querySelector("[data-rsvp-remove]");
 
       updateParticipantControl(nameInput, nameLabel, "participant-name-" + participantNumber, "Nome " + participantNumber);
-      updateParticipantControl(infoInput, infoLabel, "participant-info-" + participantNumber, "Informazione inutile");
+      updateParticipantControl(infoInput, infoLabel, "participant-info-" + participantNumber, "Informazione superflua");
 
       if (removeButton) {
         removeButton.setAttribute("aria-label", "Rimuovi Nome " + participantNumber);
@@ -316,7 +329,7 @@
 
       participantIndex += 1;
       lines.push(String(participantIndex) + ". " + (name || "Nome non indicato"));
-      lines.push("   Cosa inutile: " + (info || "Non indicata"));
+      lines.push("   Info superflua: " + (info || "Non indicata"));
       lines.push("");
       return lines;
     }, []).join("\n").trim();
