@@ -696,13 +696,16 @@ button {
 }
 
 .gift-bank-details summary {
-  width: fit-content;
-  border: 1px solid var(--wedding-ink);
+  width: 100%;
+  border: 1px solid var(--wedding-line);
   color: var(--wedding-ink);
-  background: transparent;
-  border-radius: 999px;
-  margin: 0 auto;
-  padding: 12px 24px;
+  background: rgba(255, 255, 255, .72);
+  border-radius: 8px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0;
+  padding: 18px 20px;
   cursor: pointer;
   list-style: none;
   font-family: Montserrat, sans-serif;
@@ -710,7 +713,8 @@ button {
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  transition: color .25s ease, background-color .25s ease;
+  display: flex;
+  transition: border-color .25s ease, background-color .25s ease, box-shadow .25s ease;
 }
 
 .gift-bank-details summary::-webkit-details-marker {
@@ -718,18 +722,25 @@ button {
 }
 
 .gift-bank-details summary:after {
-  content: "+";
-  margin-left: 10px;
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-right: 2px solid var(--wedding-ink);
+  border-bottom: 2px solid var(--wedding-ink);
+  flex: 0 0 auto;
+  transform: rotate(45deg);
+  transition: transform .25s ease;
 }
 
 .gift-bank-details[open] summary:after {
-  content: "-";
+  transform: rotate(225deg);
 }
 
 .gift-bank-details summary:hover,
 .gift-bank-details[open] summary {
-  color: #fff;
-  background: var(--wedding-ink);
+  border-color: rgba(60, 78, 31, .45);
+  background: #fff;
+  box-shadow: 0 12px 26px rgba(55, 76, 39, .08);
 }
 
 .gift-bank {
