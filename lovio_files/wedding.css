@@ -606,7 +606,8 @@ button {
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 24px;
+  font-size: 44px;
+  line-height: 115%;
 }
 
 .gift-eyebrow b {
@@ -628,7 +629,7 @@ button {
 
 .gift-intro {
   max-width: 720px;
-  margin: 0 auto 30px;
+  margin: 0 auto 12px;
   font-size: 21px;
   line-height: 170%;
 }
@@ -683,10 +684,33 @@ button {
 .gift-caption {
   max-width: 620px;
   color: var(--wedding-ink);
-  margin: 12px auto 28px;
+  margin: 0 auto 34px;
   font-family: Marcellus, sans-serif;
   font-size: 24px;
   line-height: 135%;
+}
+
+.gift-contribution {
+  max-width: 720px;
+  margin: 0 auto 22px;
+  text-align: center;
+}
+
+.gift-contribution-title {
+  color: var(--wedding-ink);
+  margin: 0 0 10px;
+  font-family: Marcellus, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 125%;
+}
+
+.gift-contribution-text {
+  color: var(--wedding-muted);
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 15px;
+  line-height: 170%;
 }
 
 .gift-bank-details {
@@ -702,8 +726,8 @@ button {
   background: rgba(255, 255, 255, .72);
   border-radius: 8px;
   align-items: center;
-  justify-content: space-between;
-  gap: 18px;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 14px;
   margin: 0;
   padding: 18px 20px;
   cursor: pointer;
@@ -713,12 +737,20 @@ button {
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  display: flex;
+  display: grid;
   transition: border-color .25s ease, background-color .25s ease, box-shadow .25s ease;
 }
 
 .gift-bank-details summary::-webkit-details-marker {
   display: none;
+}
+
+.gift-bank-details summary span {
+  grid-column: 2;
+}
+
+.gift-bank-details summary:before {
+  content: "";
 }
 
 .gift-bank-details summary:after {
@@ -727,7 +759,7 @@ button {
   height: 11px;
   border-right: 2px solid var(--wedding-ink);
   border-bottom: 2px solid var(--wedding-ink);
-  flex: 0 0 auto;
+  justify-self: end;
   transform: rotate(45deg);
   transition: transform .25s ease;
 }
