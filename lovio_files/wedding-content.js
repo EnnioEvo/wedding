@@ -162,7 +162,7 @@
       eyebrow: "Se sei arrivato a questo punto...",
       title: "Ecco altre foto bonus!",
       directory: "assets/images/gallery/",
-      fallback: [
+      images: [
         "04b-il-trasferimento-a-roma.jpeg",
         "07b-la-proposta.jpeg",
         "07c-la-proposta.jpeg",

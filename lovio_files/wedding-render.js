@@ -311,10 +311,29 @@
       eyebrow(gallery.eyebrow),
       '<h2 class="heading">' + escapeHtml(gallery.title) + "</h2>",
       "</div>",
-      '<div class="gallery-grid" data-gallery-dir="' + gallery.directory + '" data-gallery-fallback="' + gallery.fallback.join("|") + '"></div>',
+      '<div class="gallery-grid">',
+      gallery.images.length ? gallery.images.map(galleryImage).join("") : '<p class="gallery-empty">Aggiungi immagini nella cartella gallery.</p>',
+      "</div>",
       "</div>",
       "</section>"
     ].join("");
+  }
+
+  function galleryImage(file) {
+    var src = content.gallery.directory + encodeURIComponent(file).replace(/%2F/g, "/");
+    return [
+      '<figure class="gallery-item">',
+      '<img src="' + src + '" alt="' + escapeHtml(galleryAlt(file)) + '" loading="lazy">',
+      "</figure>"
+    ].join("");
+  }
+
+  function galleryAlt(file) {
+    return file
+      .replace(/\.[^.]+$/, "")
+      .replace(/[-_]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
   }
 
   function footerSection() {
