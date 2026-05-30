@@ -70,11 +70,11 @@
       '<a href="' + hero.ctaHref + '" class="link">' + hero.cta + '</a>',
       '<div class="border-down"></div>',
       "</div>",
-      '<div class="hero---b">',
+      '<div data-w-id="a933ad68-d409-e29c-15f6-c3aeaee44bf7" class="hero---b">',
       '<div class="block-hero---b">',
-      heroImage("overflow-hero---b-left", hero.images.left, "Ennio e Miriam"),
-      heroImage("", hero.images.center, "Ennio e Miriam"),
-      heroImage("overflow-hero---b-right", hero.images.right, "Ennio e Miriam"),
+      heroImage("overflow-hero---b-left", hero.images.left, "Ennio e Miriam", "a2887408-48c0-80f0-2d63-b3c74e04d9c6"),
+      heroImage("", hero.images.center, "Ennio e Miriam", "a5a1e781-88d4-4a93-9d22-2794f016f784"),
+      heroImage("overflow-hero---b-right", hero.images.right, "Ennio e Miriam", "48f4a930-f074-5407-ace1-02f74ffeeff3"),
       '<img src="' + hero.decor.leftFlower + '" loading="eager" alt="" class="flower-hero---b1">',
       '<img src="' + hero.decor.rightFlower + '" loading="eager" alt="" class="flower-hero---b2">',
       "</div>",
@@ -84,10 +84,10 @@
     ].join("");
   }
 
-  function heroImage(extraClass, src, alt) {
+  function heroImage(extraClass, src, alt, dataWId) {
     return [
       '<div class="' + (extraClass || "overflow-hero---b") + '">',
-      '<img class="image-hero---b" src="' + src + '" alt="' + alt + '" loading="eager">',
+      '<img data-w-id="' + dataWId + '" class="image-hero---b" src="' + src + '" alt="' + alt + '" loading="eager">',
       "</div>"
     ].join("");
   }
