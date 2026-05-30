@@ -739,6 +739,10 @@ button {
   display: none;
 }
 
+.gift-bank-details-visible summary {
+  display: none;
+}
+
 .gift-bank-details summary span {
   grid-column: 2;
 }

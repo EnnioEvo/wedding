@@ -3,7 +3,12 @@
     meta: {
       title: "Ennio e Miriam - Matrimonio",
       description: "Ennio e Miriam celebrano il loro matrimonio il 17 Ottobre 2026 a Palermo e Partinico.",
-      ogDescription: "17 Ottobre 2026: cerimonia a Palermo e ricevimento a Baglio della Luna, Partinico."
+      ogDescription: "17 Ottobre 2026: cerimonia a Palermo e ricevimento a Baglio della Luna, Partinico.",
+      url: "https://miriamedennio.love/",
+      image: "https://miriamedennio.love/assets/images/meta/preview.jpg",
+      imageAlt: "Ennio e Miriam",
+      imageWidth: "865",
+      imageHeight: "787"
     },
     nav: [
       { label: "La data", href: "#save-the-date" },

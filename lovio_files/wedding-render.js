@@ -5,10 +5,18 @@
   document.documentElement.lang = "it";
   document.title = content.meta.title;
   setMeta('meta[name="description"]', content.meta.description);
+  setMeta('meta[property="og:url"]', content.meta.url);
   setMeta('meta[property="og:title"]', content.meta.title);
   setMeta('meta[property="og:description"]', content.meta.ogDescription);
+  setMeta('meta[property="og:image"]', content.meta.image);
+  setMeta('meta[property="og:image:secure_url"]', content.meta.image);
+  setMeta('meta[property="og:image:width"]', content.meta.imageWidth);
+  setMeta('meta[property="og:image:height"]', content.meta.imageHeight);
+  setMeta('meta[property="og:image:alt"]', content.meta.imageAlt);
   setMeta('meta[property="twitter:title"]', content.meta.title);
   setMeta('meta[property="twitter:description"]', content.meta.ogDescription);
+  setMeta('meta[name="twitter:image"]', content.meta.image);
+  setMeta('meta[name="twitter:image:alt"]', content.meta.imageAlt);
 
   renderNavigation();
   renderPage();
@@ -235,8 +243,8 @@
       '<h3 class="gift-contribution-title">' + escapeHtml(gift.giftTitle) + "</h3>",
       '<p class="gift-contribution-text">' + allowedInlineHtml(gift.giftText) + "</p>",
       "</div>",
-      '<details class="gift-bank-details">',
-      '<summary><span>Scopri come</span></summary>',
+      '<details class="gift-bank-details gift-bank-details-visible" open>',
+      '<summary aria-hidden="true" tabindex="-1"><span>Scopri come</span></summary>',
       '<div class="gift-bank">',
       gift.bank.map(giftCopyRow).join(""),
       "</div>",
