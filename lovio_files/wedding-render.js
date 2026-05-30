@@ -227,7 +227,7 @@
       '<div class="wedding-eyebrow gift-eyebrow">' + allowedInlineHtml(gift.eyebrow) + "</div>",
       '<h2 class="gift-title">' + escapeHtml(gift.title) + "</h2>",
       '<p class="gift-text gift-intro">' + allowedInlineHtml(gift.text) + "</p>",
-      '<p class="gift-caption">' + escapeHtml(gift.caption) + "</p>",
+      '<p class="gift-caption">' + allowedInlineHtml(gift.caption) + "</p>",
       '<div class="gift-honeymoon" aria-label="Viaggio di nozze in Thailandia">',
       gift.honeymoonImages.map(honeymoonImage).join(""),
       "</div>",

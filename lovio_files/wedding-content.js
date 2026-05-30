@@ -137,8 +137,8 @@
     gift: {
       eyebrow: "Viaggio di nozze",
       title: "",
-      text: "Abbiamo scelto la <b>Thailandia</b> 🌴 per il nostro viaggio di nozze.",
-      caption: "Il nostro viaggio da sogno comincia tra templi, mare e luce d'Oriente.",
+      text: "Il nostro viaggio da sogno comincia tra templi, mare e luce d'Oriente.",
+      caption: "Abbiamo scelto la <b>Thailandia</b> 🌴 per il nostro viaggio di nozze.",
       giftTitle: "La vostra presenza è il regalo più grande!",
       giftText: "Ma se vuoi contribuire al nostro nuovo inizio assieme, puoi farlo da qui.",
       honeymoonImages: [
