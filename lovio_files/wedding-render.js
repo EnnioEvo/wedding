@@ -227,24 +227,27 @@
       eyebrow(gift.eyebrow),
       '<h2 class="gift-title">' + escapeHtml(gift.title) + "</h2>",
       '<p class="gift-text gift-intro">' + escapeHtml(gift.text) + "</p>",
-      '<div class="gift-destinations" aria-label="Mete del viaggio di nozze">',
-      gift.destinations.map(giftDestination).join(""),
+      '<div class="gift-honeymoon" aria-label="Viaggio di nozze in Thailandia">',
+      gift.honeymoonImages.map(honeymoonImage).join(""),
       "</div>",
+      '<p class="gift-caption">' + escapeHtml(gift.caption) + "</p>",
+      '<details class="gift-bank-details">',
+      '<summary>Scopri come</summary>',
       '<div class="gift-bank">',
       gift.bank.map(giftCopyRow).join(""),
       "</div>",
+      "</details>",
       "</div>",
       "</div>",
       "</section>"
     ].join("");
   }
 
-  function giftDestination(destination) {
+  function honeymoonImage(image) {
     return [
-      '<div class="gift-destination">',
-      '<div class="gift-destination-icon" aria-hidden="true">' + escapeHtml(destination.icon) + "</div>",
-      '<div class="gift-destination-label">' + escapeHtml(destination.label) + "</div>",
-      "</div>"
+      '<figure class="gift-honeymoon-card">',
+      '<img src="' + image.src + '" alt="' + escapeHtml(image.alt) + '" loading="lazy">',
+      "</figure>"
     ].join("");
   }
 

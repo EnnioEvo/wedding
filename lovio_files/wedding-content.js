@@ -135,14 +135,15 @@
       ]
     },
     gift: {
-      eyebrow: "Altro",
+      eyebrow: "Viaggio di nozze </b> Thailandia 🌴",
       title: "La vostra presenza è il regalo più grande!",
-      text: "Ma se vuoi contribuire al nostro nuovo inizio assieme, stiamo sognando un viaggio di nozze esotico per il 2027 tra queste mete meravigliose:",
-      destinations: [
-        { icon: "🌴", label: "Thailandia" },
-        { icon: "🌺", label: "Indonesia" },
-        { icon: "🦙", label: "Perù" },
-        { icon: "🌊", label: "Polinesia" }
+      text: "Ma se vuoi contribuire al nostro nuovo inizio assieme, abbiamo scelto la <b>Thailandia</b> per il nostro viaggio di nozze.",
+      caption: "Il nostro viaggio da sogno comincia tra templi, mare e luce d'Oriente.",
+      honeymoonImages: [
+        { src: "assets/images/honeymoon/thai1.jpg", alt: "Thailandia" },
+        { src: "assets/images/honeymoon/thai2.jpg", alt: "Thailandia" },
+        { src: "assets/images/honeymoon/thai3.jpg", alt: "Thailandia" },
+        { src: "assets/images/honeymoon/thai4.jpg", alt: "Thailandia" }
       ],
       bank: [
         { label: "IBAN", value: "IT09 W036 6901 6002 9539 2512 690" },
