@@ -808,6 +808,13 @@ button {
   line-height: 150%;
 }
 
+.gift-copy-action {
+  min-width: 62px;
+  justify-items: center;
+  gap: 7px;
+  display: grid;
+}
+
 .gift-copy-button {
   width: 46px;
   height: 46px;
@@ -837,6 +844,18 @@ button {
 .gift-copy-button:hover img,
 .gift-copy-button.is-copied img {
   filter: brightness(0) invert(1);
+}
+
+.gift-copy-feedback {
+  color: var(--wedding-ink);
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.gift-copy-feedback[hidden] {
+  display: none;
 }
 
 /* Footer and reveal */

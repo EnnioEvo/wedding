@@ -57,13 +57,32 @@
       copyText(button.getAttribute("data-copy-value") || "").then(function () {
         var originalLabel = button.getAttribute("aria-label") || "Copia";
         var originalTitle = button.getAttribute("title") || "Copia";
+        var feedback = button.parentElement
+          ? button.parentElement.querySelector("[data-copy-feedback]")
+          : null;
+
+        if (button.copyFeedbackTimeout) {
+          window.clearTimeout(button.copyFeedbackTimeout);
+        }
+
         button.setAttribute("aria-label", "Copiato");
         button.setAttribute("title", "Copiato");
         button.classList.add("is-copied");
-        window.setTimeout(function () {
+
+        if (feedback) {
+          feedback.textContent = "Copiato!";
+          feedback.hidden = false;
+        }
+
+        button.copyFeedbackTimeout = window.setTimeout(function () {
           button.setAttribute("aria-label", originalLabel);
           button.setAttribute("title", originalTitle);
           button.classList.remove("is-copied");
+
+          if (feedback) {
+            feedback.textContent = "";
+            feedback.hidden = true;
+          }
         }, 1600);
       });
     });

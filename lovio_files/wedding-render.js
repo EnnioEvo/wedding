@@ -262,9 +262,12 @@
       '<div class="gift-copy-label">' + escapeHtml(row.label) + "</div>",
       '<div class="gift-copy-value">' + escapeHtml(row.value) + "</div>",
       "</div>",
+      '<div class="gift-copy-action">',
       '<button class="gift-copy-button" type="button" data-copy-value="' + escapeHtml(row.value) + '" aria-label="Copia ' + escapeHtml(row.label) + '" title="Copia">',
       '<img src="' + content.decor.copyIcon + '" alt="" aria-hidden="true">',
       "</button>",
+      '<span class="gift-copy-feedback" data-copy-feedback role="status" aria-live="polite" hidden></span>',
+      "</div>",
       "</div>"
     ].join("");
   }
