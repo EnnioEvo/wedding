@@ -98,6 +98,8 @@
     }, 150);
   }
 
+  initMobileHoneymoonTilt();
+
   var revealNodes = Array.prototype.slice.call(document.querySelectorAll(".reveal-on-scroll"));
   if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     revealNodes.forEach(function (node) {
@@ -139,5 +141,59 @@
     document.execCommand("copy");
     document.body.removeChild(input);
     return Promise.resolve();
+  }
+
+  function initMobileHoneymoonTilt() {
+    var cards = Array.prototype.slice.call(document.querySelectorAll(".gift-honeymoon-card"));
+    if (!cards.length || !("IntersectionObserver" in window)) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    var mobileQuery = window.matchMedia("(max-width: 767px)");
+    var observer = null;
+
+    function resetCards() {
+      cards.forEach(function (card) {
+        card.classList.remove("is-mobile-tilt-ready");
+        card.classList.remove("is-mobile-tilted");
+      });
+    }
+
+    function enableTilt() {
+      cards.forEach(function (card) {
+        card.classList.add("is-mobile-tilt-ready");
+      });
+
+      observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          entry.target.classList.toggle("is-mobile-tilted", entry.isIntersecting && entry.intersectionRatio >= 0.35);
+        });
+      }, { threshold: [0, 0.35] });
+
+      cards.forEach(function (card) {
+        observer.observe(card);
+      });
+    }
+
+    function setTiltEnabled(isEnabled) {
+      if (observer) {
+        observer.disconnect();
+        observer = null;
+      }
+
+      resetCards();
+      if (isEnabled) enableTilt();
+    }
+
+    setTiltEnabled(mobileQuery.matches);
+
+    if (mobileQuery.addEventListener) {
+      mobileQuery.addEventListener("change", function (event) {
+        setTiltEnabled(event.matches);
+      });
+    } else if (mobileQuery.addListener) {
+      mobileQuery.addListener(function (event) {
+        setTiltEnabled(event.matches);
+      });
+    }
   }
 })();
