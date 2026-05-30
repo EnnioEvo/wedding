@@ -179,13 +179,16 @@
       config.templateId,
       {
         name: getFormValue(formNode, "name"),
-        attendance: getFormValue(formNode, "attendance"),
-        confirming_for: getFormValue(formNode, "confirming-for"),
-        dietary: getFormValue(formNode, "dietary"),
-        submitted_at: new Date().toLocaleString("it-IT", {
-          dateStyle: "short",
-          timeStyle: "short"
-        })
+        // attendance: getFormValue(formNode, "attendance"),
+        // confirming_for: getFormValue(formNode, "confirming-for"),
+        // dietary: getFormValue(formNode, "dietary"),
+        // submitted_at: new Date().toLocaleString("it-IT", {
+        //   dateStyle: "short",
+        //   timeStyle: "short"
+        // })
+        message: "Presenza:\n" + getFormValue(formNode, "attendance") + "\n\n" +
+          "Per chi altri stai confermando:\n" + getFormValue(formNode, "confirming-for") + "\n\n" +
+          "Dieta:\n" + getFormValue(formNode, "dietary")
       },
       { publicKey: config.publicKey }
     );
