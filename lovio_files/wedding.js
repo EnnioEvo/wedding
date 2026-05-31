@@ -53,7 +53,7 @@
     "Nel film X tifavo per il cattivo",
     "Una volta mi ha intervistato il TG",
     "ho vinto il torneo di enigmistica",
-    "Riconosco la sottomarca delle patatine a occhi chiusi",
+    "Riconosco la sottomarca delle patatine",
     "Non mangio niente che sia verde",
     "Posso mangiare 5 hamburger in un quarto d'ora",
     "So toccarmi la lingua col naso",

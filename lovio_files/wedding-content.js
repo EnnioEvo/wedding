@@ -101,7 +101,7 @@
     ],
     venuesIntro: {
       eyebrow: "I luoghi",
-      title: "Chiesa e Location",
+      title: "Chiesa e Ricevimento",
       text: "I posti che abbiamo scelto per il nostro sì e per festeggiare insieme."
     },
     venues: [
@@ -113,7 +113,7 @@
         imageFirst: true
       },
       {
-        eyebrow: "La Location",
+        eyebrow: "Il Ricevimento",
         title: "Baglio della Luna",
         text: "Il Baglio della Luna è un'antica tenuta dell'Ottocento, una struttura rustica circondata dalle campagne di Partinico, tra prati ampi e alberi secolari. Abbiamo pensato che i suoi giardini e la sua atmosfera romantica fossero lo sfondo perfetto per condividere con voi il nostro primo pranzo da marito e moglie, godendoci insieme una festa all'aperto immersi nel verde.",
         image: "assets/images/venues/baglio-della-luna.jpeg"
