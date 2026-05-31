@@ -37,7 +37,7 @@
     saveTheDate: {
       eyebrow: "Save the date",
       title: "Ci sposiamo<br>Sabato 17 Ottobre 2026.",
-      text: "La cerimonia sarà alle 11:00 presso la Chiesa Santa Maria della Pietà di Palermo. <br> Dalle 13:00 festeggeremo insieme a Baglio della Luna, Partinico.",
+      text: "La cerimonia sarà alle 11:00 presso la Chiesa Santa Maria della Pietà di Palermo. <br> A seguire festeggeremo insieme a Baglio della Luna, Partinico.",
       targetDate: "2026-10-17T11:00:00+02:00"
     },
     storyIntro: {
