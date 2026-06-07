@@ -47,6 +47,7 @@
       dividerSection(),
       introSection("storia", content.storyIntro),
       content.story.map(storyFeature).join(""),
+      storyQuoteSection(),
       introSection("luoghi", content.venuesIntro, "venue-heading-section"),
       content.venues.map(venueFeature).join(""),
       detailsSection(),
@@ -171,6 +172,22 @@
       "</div>"
     ].join("");
     return featureSection(textBlock, imageBlock(item, index, "venue-image"), item.imageFirst, "venue-section");
+  }
+
+  function storyQuoteSection() {
+    var footer = content.storyQuote.footer
+      ? '<cite class="story-quote-footer">' + escapeHtml(content.storyQuote.footer) + "</cite>"
+      : "";
+
+    return [
+      '<section class="section wedding-story-quote reveal-on-scroll" aria-label="Citazione">',
+      '<div class="content">',
+      '<blockquote class="story-quote-text">"' + multilineHtml(content.storyQuote.text) + '"</blockquote>',
+      footer,
+      "</div>",
+      '<img class="story-quote-seal" src="' + content.decor.seal + '" alt="" loading="eager">',
+      "</section>"
+    ].join("");
   }
 
   function featureSection(textBlock, imageBlockHtml, imageFirst, sectionClass) {
@@ -390,6 +407,10 @@
       .replace(/"/g, "&quot;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;");
+  }
+
+  function multilineHtml(value) {
+    return escapeHtml(value).replace(/\n/g, "<br>");
   }
 
   function allowedInlineHtml(value) {

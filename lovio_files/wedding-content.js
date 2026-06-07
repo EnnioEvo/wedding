@@ -99,6 +99,10 @@
         image: "assets/images/story/07-la-proposta.jpeg"
       }
     ],
+    storyQuote: {
+      text: "Non ti erano nascoste le mie ossa\n quando venivo formato nel segreto\n, intessuto nelle profondità della terra.",
+      footer: "- Salmi 138:15"
+    },
     venuesIntro: {
       eyebrow: "I luoghi",
       title: "Chiesa e Ricevimento",
