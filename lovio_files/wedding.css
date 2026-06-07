@@ -429,20 +429,20 @@ button {
   margin-top: 14px;
   text-align: center;
   font-family: Marcellus, sans-serif;
-  font-size: 16px;
+  font-size: 22px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
 }
 
 .story-quote-seal {
-  width: 74px;
-  height: 74px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   display: block;
   position: absolute;
   left: 50%;
-  bottom: -37px;
+  top: 188px;
   transform: translateX(-50%) rotate(-8deg);
   z-index: 2;
 }

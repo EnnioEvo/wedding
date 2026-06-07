@@ -206,7 +206,6 @@
       flowerB: "assets/images/decor/flower-two.png",
       ivyTop: "assets/images/decor/edera_top_compress.png",
       ivyVase: "assets/images/decor/edera_on_vase_transparent_compress.png",
-      ivyVerticalLeft: "assets/images/decor/edera_vertical_1.png",
       ivyVerticalRight: "assets/images/decor/edera_vertical_4.png",
       copyIcon: "assets/icons/copy.svg"
     }
