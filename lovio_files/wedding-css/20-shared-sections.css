@@ -1,4 +1,9 @@
 /* Shared sections */
+.block-heading.margin {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
 .wedding-eyebrow {
   color: var(--wedding-sage);
   letter-spacing: 2px;

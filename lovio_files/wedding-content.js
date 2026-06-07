@@ -41,8 +41,8 @@
       targetDate: "2026-10-17T11:00:00+02:00"
     },
     saveTheDateQuote: {
-      text: "Tutto era scritto nel tuo libro;\ni miei giorni erano fissati,\nquando ancora non ne esisteva uno.",
-      footer: "Salmi 138:16"
+      text: "Non ti erano nascoste le mie ossa\n mentre venivo formato nel segreto\n intessuto nelle profondità della terra.",
+      footer: "- Salmi 138:15"
     },
     storyIntro: {
       eyebrow: "La nostra storia",
@@ -104,8 +104,8 @@
       }
     ],
     storyQuote: {
-      text: "Non ti erano nascoste le mie ossa\n mentre venivo formato nel segreto,\n intessuto nelle profondità della terra.",
-      footer: "- Salmi 138:15"
+      text: "Tutto era scritto nel tuo libro;\ni miei giorni erano fissati,\nquando ancora non ne esisteva uno.",
+      footer: "- Salmi 138:16"
     },
     venuesIntro: {
       eyebrow: "I luoghi",

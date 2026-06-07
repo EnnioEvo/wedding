@@ -79,8 +79,10 @@
     #fff 50%,
     #fff 100%
   );
-  padding-top: 20px;
-  padding-bottom: 20px;
+  height: 130px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
 }
 
 .save-date-divider .cut-line {
@@ -112,6 +114,11 @@
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.save-date-divider .wax-seal {
+  width: 96px;
+  height: 96px;
 }
 
 .wax-seal {

@@ -61,3 +61,8 @@
   padding-top: 42px;
   padding-bottom: 42px;
 }
+
+.section.wedding-section.compact.save-date-divider {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
