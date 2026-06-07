@@ -98,6 +98,37 @@
   background: #fff;
 }
 
+.wedding-save-date-quote {
+  background: #fff;
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.save-date-quote-text {
+  max-width: 760px;
+  color: var(--wedding-ink);
+  text-align: center;
+  border-left: 0;
+  margin: 0 auto;
+  padding: 0;
+  font-family: Marcellus, sans-serif;
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.save-date-quote-footer {
+  color: var(--wedding-muted);
+  display: block;
+  margin-top: 18px;
+  text-align: center;
+  font-family: Marcellus, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+
 .wedding-story-quote {
   background: var(--wedding-ink);
   justify-content: flex-start;

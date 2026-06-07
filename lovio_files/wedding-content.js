@@ -40,6 +40,10 @@
       text: "La cerimonia sarà alle 11:00 presso la Chiesa Santa Maria della Pietà di Palermo. <br> A seguire festeggeremo insieme a Baglio della Luna, Partinico.",
       targetDate: "2026-10-17T11:00:00+02:00"
     },
+    saveTheDateQuote: {
+      text: "Ancora informe mi hanno visto i tuoi occhi\ne tutto era scritto nel tuo libro;\ni miei giorni erano fissati,\nquando ancora non ne esisteva uno.",
+      footer: "Salmi 138:16"
+    },
     storyIntro: {
       eyebrow: "La nostra storia",
       title: "Un cammino verso il sì",

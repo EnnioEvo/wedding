@@ -45,6 +45,7 @@
       heroSection(),
       saveTheDateSection(),
       dividerSection(),
+      saveTheDateQuoteSection(),
       introSection("storia", content.storyIntro),
       content.story.map(storyFeature).join(""),
       storyQuoteSection(),
@@ -131,6 +132,24 @@
       '<div class="cut-line"></div>',
       '<img class="wax-seal" src="' + content.decor.seal + '" alt="" loading="lazy">',
       '<div class="cut-line"></div>',
+      "</div>",
+      "</section>"
+    ].join("");
+  }
+
+  function saveTheDateQuoteSection() {
+    var quote = content.saveTheDateQuote;
+    if (!quote) return "";
+
+    var footer = quote.footer
+      ? '<cite class="save-date-quote-footer">' + escapeHtml(quote.footer) + "</cite>"
+      : "";
+
+    return [
+      '<section id="save-the-date-quote" class="section wedding-save-date-quote reveal-on-scroll" aria-label="Citazione">',
+      '<div class="content">',
+      '<blockquote class="save-date-quote-text">"' + multilineHtml(quote.text) + '"</blockquote>',
+      footer,
       "</div>",
       "</section>"
     ].join("");
