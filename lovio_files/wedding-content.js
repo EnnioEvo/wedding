@@ -41,7 +41,7 @@
       targetDate: "2026-10-17T11:00:00+02:00"
     },
     saveTheDateQuote: {
-      text: "Ancora informe mi hanno visto i tuoi occhi\ne tutto era scritto nel tuo libro;\ni miei giorni erano fissati,\nquando ancora non ne esisteva uno.",
+      text: "Tutto era scritto nel tuo libro;\ni miei giorni erano fissati,\nquando ancora non ne esisteva uno.",
       footer: "Salmi 138:16"
     },
     storyIntro: {
@@ -116,7 +116,7 @@
       {
         eyebrow: "La Chiesa",
         title: "Santa Maria della Pietà",
-        text: "Abbiamo scelto un luogo nato da un antico gesto d'amore: la Chiesa di Santa Maria della Pietà. Le sue radici affondano nel lascito del nobile Francesco Abatellis che, per amore della moglie Eleonora, destinò i propri beni per fondare il monastero a cui, in seguito, venne annessa questa splendida chiesa. Oggi, impreziosita da meravigliosi stucchi del Serpotta e da una suggestiva grata a forma di sole nascente, è uno degli edifici barocchi più affascinanti di Palermo. Un luogo maestoso, intriso di storia e arte, che farà da cornice alla nostra promessa.",
+        text: "Abbiamo scelto un luogo nato da un antico gesto d'amore. Le radici di Santa Maria della Pietà. Le sue radici affondano nel lascito del nobile Francesco Abatellis che, per amore della moglie Eleonora, destinò i propri beni per fondare il monastero a cui, in seguito, venne annessa questa splendida chiesa. Oggi, impreziosita da meravigliosi stucchi del Serpotta e da una suggestiva grata a forma di sole nascente, è uno degli edifici barocchi più affascinanti di Palermo. Un luogo maestoso, intriso di storia e arte, che farà da cornice al sacramento della nostra unione.",
         image: "assets/images/venues/santa-maria-della-pieta.jpeg",
         imageFirst: true
       },
