@@ -1,0 +1,75 @@
+/* Tokens and base */
+:root {
+  --wedding-ink: #506400;
+  --wedding-muted: #68705a;
+  --wedding-sage: #8a9570;
+  --wedding-paper: #fbf8f2;
+  --wedding-cream: #f4efe6;
+  --wedding-line: rgba(80, 100, 0, .18);
+  --wedding-wax: #9f4f47;
+}
+
+html {
+  color-scheme: only light;
+  background-color: var(--wedding-paper);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  color-scheme: only light;
+  color: var(--wedding-muted);
+  background: var(--wedding-paper);
+  overflow-x: hidden;
+}
+
+input,
+select,
+textarea,
+button {
+  color-scheme: only light;
+}
+
+.heading,
+.heading-hero,
+.wedding-logo,
+.countdown-number,
+.story-title,
+.wedding-card-title,
+.gift-title,
+.footer-initials {
+  color: var(--wedding-ink);
+}
+
+.paragraph,
+.wedding-lead,
+.wedding-card-text,
+.gift-text,
+.map-placeholder,
+.footer-date,
+.footer-love {
+  color: var(--wedding-muted);
+}
+
+.subtitle,
+.nav-link,
+.link,
+.countdown-label,
+.wedding-eyebrow,
+.story-date,
+.form-field label,
+.gift-copy-label {
+  color: var(--wedding-sage);
+}
+
+.button,
+.gift-copy-button {
+  color: var(--wedding-ink);
+  border-color: var(--wedding-ink);
+}
+
+.cart-block,
+.w-commerce-commercecartcontainerwrapper,
+.w-webflow-badge {
+  display: none !important;
+}

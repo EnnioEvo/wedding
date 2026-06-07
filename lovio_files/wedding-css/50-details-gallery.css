@@ -1,0 +1,67 @@
+/* Details and maps */
+#dettagli .heading {
+  color: var(--wedding-paper);
+}
+
+#dettagli .wedding-eyebrow {
+  color: rgba(251, 248, 242, .74);
+}
+
+.details-grid {
+  width: 100%;
+  grid-column-gap: 18px;
+  grid-row-gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: grid;
+}
+
+.wedding-card {
+  min-height: 218px;
+  padding: 28px;
+}
+
+.wedding-card.map-card {
+  grid-column: span 1.7;
+}
+
+.map-placeholder {
+  min-height: 170px;
+  border: 1px dashed var(--wedding-line);
+  background: var(--wedding-cream);
+  border-radius: 8px;
+  place-items: center;
+  margin-top: 20px;
+  display: grid;
+}
+
+.schedule-list {
+  color: var(--wedding-muted);
+  padding-left: 18px;
+  line-height: 185%;
+}
+
+/* Gallery */
+.gallery-grid {
+  width: 100%;
+  column-count: 4;
+  column-gap: 16px;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.gallery-empty {
+  color: var(--wedding-muted);
+  margin: 0;
+  line-height: 165%;
+}

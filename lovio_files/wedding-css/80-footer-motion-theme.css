@@ -1,0 +1,123 @@
+/* Footer and reveal */
+.wedding-footer {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.footer-initials {
+  color: var(--wedding-ink);
+  margin-bottom: 10px;
+  font-family: Marcellus, sans-serif;
+  font-size: 48px;
+  line-height: 1;
+}
+
+.footer-date,
+.footer-love {
+  color: var(--wedding-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.footer-love {
+  margin-top: 12px;
+  text-transform: none;
+  letter-spacing: .08em;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s cubic-bezier(.25, .46, .45, .94), transform .7s cubic-bezier(.25, .46, .45, .94);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html,
+  body,
+  .overflow,
+  .wedding-section,
+  .wedding-story-section,
+  .venue-section {
+    color: var(--wedding-muted) !important;
+    background: var(--wedding-paper) !important;
+    background-color: var(--wedding-paper) !important;
+  }
+
+  .venue-heading-section,
+  .venue-section {
+    background: #fff !important;
+    background-color: #fff !important;
+  }
+
+  #save-the-date,
+  #dettagli,
+  #regali {
+    background: var(--wedding-ink) !important;
+    background-color: var(--wedding-ink) !important;
+  }
+
+  .save-date-divider {
+    background: linear-gradient(
+      to bottom,
+      var(--wedding-ink) 0,
+      var(--wedding-ink) 50%,
+      var(--wedding-paper) 50%,
+      var(--wedding-paper) 100%
+    ) !important;
+    background-color: transparent !important;
+  }
+
+  #save-the-date .heading,
+  #save-the-date .wedding-lead,
+  #save-the-date .countdown-number,
+  #save-the-date .countdown-label,
+  #dettagli .heading {
+    color: var(--wedding-paper) !important;
+  }
+
+  #save-the-date .countdown-card {
+    background: rgba(255, 255, 255, .08) !important;
+    background-color: rgba(255, 255, 255, .08) !important;
+    border-color: rgba(251, 248, 242, .24) !important;
+  }
+
+  .wedding-section.alt,
+  .rsvp-panel,
+  .gift-panel,
+  .wedding-card,
+  .countdown-card,
+  .gift-copy-row,
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    color: var(--wedding-ink) !important;
+    background: #fff !important;
+    background-color: #fff !important;
+    border-color: var(--wedding-line) !important;
+  }
+
+  img,
+  iframe {
+    filter: none !important;
+  }
+}

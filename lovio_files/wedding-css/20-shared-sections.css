@@ -1,0 +1,20 @@
+/* Shared sections */
+.wedding-eyebrow {
+  color: var(--wedding-sage);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.wedding-lead {
+  max-width: 760px;
+  color: var(--wedding-muted);
+  text-align: center;
+  margin: 0 auto 38px;
+  font-size: 24px;
+  line-height: 170%;
+}

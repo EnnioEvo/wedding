@@ -1,0 +1,175 @@
+/* Story and venues */
+.story-card {
+  width: calc(50% - 34px);
+  margin-bottom: 24px;
+  padding: 26px;
+  position: relative;
+}
+
+.story-card:nth-child(odd) {
+  margin-right: auto;
+}
+
+.story-card:nth-child(even) {
+  margin-left: auto;
+}
+
+.story-card:after {
+  content: "";
+  width: 13px;
+  height: 13px;
+  background: var(--wedding-sage);
+  border: 4px solid var(--wedding-paper);
+  border-radius: 999px;
+  position: absolute;
+  top: 30px;
+}
+
+.story-card:nth-child(odd):after {
+  right: -42px;
+}
+
+.story-card:nth-child(even):after {
+  left: -42px;
+}
+
+.story-date {
+  color: var(--wedding-sage);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+  font-family: Montserrat, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.story-title,
+.wedding-card-title,
+.gift-title {
+  color: var(--wedding-ink);
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-family: Marcellus, sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.story-text,
+.wedding-card-text,
+.gift-text,
+.map-placeholder {
+  color: var(--wedding-muted);
+  margin: 0;
+  line-height: 165%;
+}
+
+.wedding-story-section {
+  background: var(--wedding-paper);
+}
+
+.wedding-story-section .grid-2-columns {
+  align-items: center;
+}
+
+.wedding-story-section .overflow-image {
+  background-color: var(--wedding-cream);
+  transform: rotate(3deg);
+}
+
+.wedding-story-section:nth-of-type(even) .overflow-image {
+  transform: rotate(-3deg);
+}
+
+.wedding-story-section .image {
+  aspect-ratio: 4 / 5;
+  display: block;
+}
+
+.wedding-story-section .image-subtitle,
+.wedding-story-section .image,
+.wedding-story-section .flower---a,
+.wedding-story-section .flower---b {
+  opacity: 1 !important;
+}
+
+.venue-heading-section,
+.venue-section {
+  background: #fff;
+}
+
+.wedding-story-quote {
+  background: var(--wedding-ink);
+  justify-content: flex-start;
+  min-height: 190px;
+  padding: 38px 20px 62px;
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+}
+
+.story-quote-text {
+  max-width: 760px;
+  color: var(--wedding-paper);
+  text-align: center;
+  border-left: 0;
+  margin: 0 auto;
+  padding: 0;
+  font-family: Marcellus, sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 125%;
+}
+
+.story-quote-footer {
+  color: rgba(251, 248, 242, .76);
+  display: block;
+  margin-top: 14px;
+  text-align: center;
+  font-family: Marcellus, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+.story-quote-seal {
+  width: 74px;
+  height: 74px;
+  object-fit: contain;
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -37px;
+  transform: translateX(-50%) rotate(-8deg);
+  z-index: 2;
+}
+
+.venue-heading-section {
+  padding-bottom: 18px;
+}
+
+.venue-section {
+  padding-top: 24px;
+}
+
+.venue-section .grid-2-columns {
+  align-items: center;
+}
+
+.wedding-story-section.venue-section .overflow-image {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: none;
+}
+
+.venue-section .image {
+  aspect-ratio: 4 / 5;
+  display: block;
+}
+
+#dettagli,
+#regali {
+  background: var(--wedding-ink);
+}

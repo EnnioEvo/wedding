@@ -1,0 +1,63 @@
+/* Navigation and hero */
+.brand,
+.brand-mobile {
+  text-decoration: none;
+}
+
+.wedding-logo {
+  color: var(--wedding-ink);
+  letter-spacing: .08em;
+  font-family: Marcellus, sans-serif;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.grid-navbar.wedding-nav-grid {
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.wedding-nav-links {
+  /* font-size: 30px; */
+  grid-column-gap: 12px;
+  grid-row-gap: 6px;
+  align-items: center;
+  display: flex;
+}
+
+.wedding-nav-links.right {
+  justify-content: flex-end;
+}
+
+.hero-top .heading-hero {
+  max-width: 900px;
+  overflow-wrap: anywhere;
+}
+
+.image-subtitle {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.image-hero---b,
+.flower-hero---b1,
+.flower-hero---b2 {
+  opacity: 1 !important;
+}
+
+.image-hero---b {
+  object-fit: cover;
+}
+
+.wedding-section {
+  background: var(--wedding-paper);
+}
+
+.wedding-section.alt {
+  background: #fff;
+}
+
+.wedding-section.compact {
+  padding-top: 42px;
+  padding-bottom: 42px;
+}

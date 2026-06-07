@@ -1,0 +1,290 @@
+/* Gifts */
+.gift-panel {
+  width: 100%;
+  max-width: 960px;
+  text-align: center;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-panel:before {
+  content: "";
+  width: 190px;
+  height: 190px;
+  border: 1px solid var(--wedding-line);
+  border-radius: 999px;
+  position: absolute;
+  top: -85px;
+  right: -50px;
+  opacity: .55;
+}
+
+.gift-title {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 44px;
+  line-height: 115%;
+}
+
+.gift-eyebrow b {
+  color: var(--wedding-ink);
+  display: inline-block;
+  margin-top: 8px;
+  font-family: Marcellus, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.gift-intro b,
+.gift-intro strong,
+.gift-caption b,
+.gift-caption strong {
+  color: var(--wedding-ink);
+  font-weight: 700;
+}
+
+.gift-intro,
+.gift-caption {
+  max-width: 620px;
+  color: var(--wedding-ink);
+  font-family: Marcellus, sans-serif;
+  font-size: 24px;
+  line-height: 135%;
+}
+
+.gift-intro {
+  margin: 0 auto 12px;
+}
+
+.gift-honeymoon {
+  grid-column-gap: 14px;
+  grid-row-gap: 14px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 34px 0;
+  display: grid;
+}
+
+.gift-honeymoon-card {
+  border: 1px solid var(--wedding-line);
+  background: rgba(244, 239, 230, .62);
+  border-radius: 8px;
+  margin: 0;
+  padding: 7px;
+  box-shadow: 0 14px 28px rgba(80, 100, 0, .13);
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+.gift-honeymoon-card:nth-child(1) {
+  transform: rotate(-4deg) translateY(8px);
+}
+
+.gift-honeymoon-card:nth-child(2) {
+  transform: rotate(2.5deg) translateY(-4px);
+}
+
+.gift-honeymoon-card:nth-child(3) {
+  transform: rotate(-2deg) translateY(2px);
+}
+
+.gift-honeymoon-card:nth-child(4) {
+  transform: rotate(4deg) translateY(10px);
+}
+
+.gift-honeymoon-card:hover {
+  box-shadow: 0 18px 34px rgba(80, 100, 0, .18);
+  transform: rotate(0deg) translateY(-6px);
+}
+
+.gift-honeymoon-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.gift-caption {
+  margin: 0 auto 34px;
+}
+
+.gift-contribution {
+  max-width: 720px;
+  margin: 0 auto 22px;
+  text-align: center;
+}
+
+.gift-contribution-title {
+  color: var(--wedding-ink);
+  margin: 0 0 10px;
+  font-family: Marcellus, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 125%;
+}
+
+.gift-contribution-text {
+  color: var(--wedding-muted);
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 15px;
+  line-height: 170%;
+}
+
+.gift-bank-details {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.gift-bank-details summary {
+  width: 100%;
+  border: 1px solid var(--wedding-line);
+  color: var(--wedding-ink);
+  background: rgba(255, 255, 255, .72);
+  border-radius: 8px;
+  align-items: center;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 14px;
+  margin: 0;
+  padding: 18px 20px;
+  cursor: pointer;
+  list-style: none;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: grid;
+  transition: border-color .25s ease, background-color .25s ease, box-shadow .25s ease;
+}
+
+.gift-bank-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.gift-bank-details-visible summary {
+  display: none;
+}
+
+.gift-bank-details summary span {
+  grid-column: 2;
+}
+
+.gift-bank-details summary:before {
+  content: "";
+}
+
+.gift-bank-details summary:after {
+  content: "";
+  width: 11px;
+  height: 11px;
+  border-right: 2px solid var(--wedding-ink);
+  border-bottom: 2px solid var(--wedding-ink);
+  justify-self: end;
+  transform: rotate(45deg);
+  transition: transform .25s ease;
+}
+
+.gift-bank-details[open] summary:after {
+  transform: rotate(225deg);
+}
+
+.gift-bank-details summary:hover,
+.gift-bank-details[open] summary {
+  border-color: rgba(60, 78, 31, .45);
+  background: #fff;
+  box-shadow: 0 12px 26px rgba(55, 76, 39, .08);
+}
+
+.gift-bank {
+  width: 100%;
+  border-top: 1px solid var(--wedding-line);
+  margin: 22px auto 0;
+  padding-top: 22px;
+}
+
+.gift-copy-row {
+  border: 1px solid var(--wedding-line);
+  background: rgba(255, 255, 255, .7);
+  border-radius: 8px;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 18px;
+  margin-top: 14px;
+  padding: 18px;
+  display: grid;
+  text-align: center;
+}
+
+.gift-copy-label {
+  color: var(--wedding-sage);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+  font-family: Montserrat, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.gift-copy-value {
+  color: var(--wedding-ink);
+  overflow-wrap: anywhere;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.gift-copy-action {
+  min-width: 62px;
+  justify-items: center;
+  gap: 7px;
+  display: grid;
+}
+
+.gift-copy-button {
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--wedding-ink);
+  color: var(--wedding-ink);
+  background: transparent;
+  border-radius: 999px;
+  place-items: center;
+  padding: 0;
+  cursor: pointer;
+  display: grid;
+  transition: color .25s ease, background-color .25s ease;
+}
+
+.gift-copy-button img {
+  width: 19px;
+  height: 19px;
+  display: block;
+}
+
+.gift-copy-button:hover,
+.gift-copy-button.is-copied {
+  color: #fff;
+  background: var(--wedding-ink);
+}
+
+.gift-copy-button:hover img,
+.gift-copy-button.is-copied img {
+  filter: brightness(0) invert(1);
+}
+
+.gift-copy-feedback {
+  color: var(--wedding-ink);
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.gift-copy-feedback[hidden] {
+  display: none;
+}
