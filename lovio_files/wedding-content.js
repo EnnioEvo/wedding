@@ -104,19 +104,19 @@
       }
     ],
     storyQuote: {
-      text: "Non ti erano nascoste le mie ossa\n quando venivo formato nel segreto\n, intessuto nelle profondità della terra.",
+      text: "Non ti erano nascoste le mie ossa\n mentre venivo formato nel segreto,\n intessuto nelle profondità della terra.",
       footer: "- Salmi 138:15"
     },
     venuesIntro: {
       eyebrow: "I luoghi",
       title: "Chiesa e Ricevimento",
-      text: "I posti che abbiamo scelto per il nostro sì e per festeggiare insieme."
+      text: "I posti che abbiamo scelto per il Sacramento del Matrimonio e per festeggiare insieme."
     },
     venues: [
       {
         eyebrow: "La Chiesa",
         title: "Santa Maria della Pietà",
-        text: "Per il nostro 'Sì' abbiamo scelto un luogo che ci ha emozionato fin da subito: la Chiesa di Santa Maria della Pietà. Edificata alla fine del XVII secolo, è una delle chiese barocche più affascinanti di Palermo. Al suo interno custodisce i meravigliosi stucchi del Serpotta e una suggestiva grata a forma di sole nascente. Un luogo maestoso, intriso di storia e arte, che farà da cornice al nostro amore.",
+        text: "Abbiamo scelto un luogo nato da un antico gesto d'amore: la Chiesa di Santa Maria della Pietà. Le sue radici affondano nel lascito del nobile Francesco Abatellis che, per amore della moglie Eleonora, destinò i propri beni per fondare il monastero a cui, in seguito, venne annessa questa splendida chiesa. Oggi, impreziosita da meravigliosi stucchi del Serpotta e da una suggestiva grata a forma di sole nascente, è uno degli edifici barocchi più affascinanti di Palermo. Un luogo maestoso, intriso di storia e arte, che farà da cornice alla nostra promessa.",
         image: "assets/images/venues/santa-maria-della-pieta.jpeg",
         imageFirst: true
       },
