@@ -125,7 +125,7 @@
 
   function dividerSection() {
     return [
-      '<section class="section wedding-section compact save-date-divider reveal-on-scroll" aria-label="Divisore decorativo">',
+      '<section class="section wedding-section compact save-date-divider" aria-label="Divisore decorativo">',
       '<div class="cut-divider">',
       '<div class="scissors-mark" aria-hidden="true">✂</div>',
       '<div class="cut-line"></div>',
@@ -139,6 +139,7 @@
   function introSection(id, section, extraClass) {
     return [
       '<section id="' + id + '" class="section wedding-section ' + (extraClass || "") + ' reveal-on-scroll">',
+      id === "luoghi" ? '<img class="wedding-venues-vase" src="' + content.decor.ivyVase + '" alt="" aria-hidden="true" loading="lazy">' : "",
       '<div class="content">',
       '<div class="block-heading margin">',
       eyebrow(section.eyebrow),
@@ -181,6 +182,7 @@
 
     return [
       '<section class="section wedding-story-quote reveal-on-scroll" aria-label="Citazione">',
+      decorativeImage(content.decor.ivyVerticalRight, "wedding-ivy--quote-right"),
       '<div class="content">',
       '<blockquote class="story-quote-text">"' + multilineHtml(content.storyQuote.text) + '"</blockquote>',
       footer,
@@ -401,6 +403,12 @@
 
   function subtitleImage() {
     return '<img src="' + content.decor.subtitle + '" loading="lazy" alt="" width="62" class="image-subtitle">';
+  }
+
+  function decorativeImage(src, modifierClass) {
+    if (!src) return "";
+
+    return '<img class="wedding-ivy ' + modifierClass + '" src="' + src + '" alt="" aria-hidden="true" loading="lazy">';
   }
 
   function mapFrame(src) {
