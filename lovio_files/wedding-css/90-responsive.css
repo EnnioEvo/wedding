@@ -137,9 +137,9 @@
   }
 
   .wedding-story-quote {
-    min-height: 178px;
-    padding-top: 34px;
-    padding-bottom: 56px;
+    min-height: 0;
+    padding-top: 28px;
+    padding-bottom: 44px;
   }
 
   .wedding-save-date-quote {
@@ -157,12 +157,12 @@
   }
 
   .story-quote-text {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .story-quote-footer {
-    margin-top: 12px;
-    font-size: 15px;
+    margin-top: 10px;
+    font-size: 14px;
   }
 
   .story-quote-seal {
@@ -214,7 +214,7 @@
   }
 
   .story-quote-text {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .save-date-quote-text {

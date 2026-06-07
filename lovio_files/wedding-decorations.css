@@ -57,8 +57,7 @@
   filter: saturate(1.75) contrast(1.35) brightness(.95) drop-shadow(0 8px 12px rgba(20, 45, 0, .14));
 }
 
-.wedding-story-quote .content,
-.story-quote-seal {
+.wedding-story-quote .content {
   position: relative;
   z-index: 2;
 }

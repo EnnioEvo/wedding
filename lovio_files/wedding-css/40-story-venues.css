@@ -132,22 +132,24 @@
 .wedding-story-quote {
   background: var(--wedding-ink);
   justify-content: flex-start;
-  min-height: 190px;
-  padding: 38px 20px 62px;
+  min-height: 0;
+  padding: 28px 20px 44px;
   position: relative;
   overflow: visible;
   z-index: 1;
 }
 
 .story-quote-text {
+  width: 100%;
   max-width: 760px;
+  box-sizing: border-box;
   color: var(--wedding-paper);
   text-align: center;
   border-left: 0;
   margin: 0 auto;
   padding: 0;
   font-family: Marcellus, sans-serif;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 125%;
 }
@@ -155,10 +157,10 @@
 .story-quote-footer {
   color: rgba(251, 248, 242, .76);
   display: block;
-  margin-top: 14px;
+  margin-top: 10px;
   text-align: center;
   font-family: Marcellus, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
