@@ -80,14 +80,14 @@
 @media screen and (max-width: 767px) {
   .wedding-venues-vase {
     width: 94px;
-    top: -62px;
+    top: 0;
     left: 6px;
   }
 
   .wedding-ivy--quote-right {
     width: 100px;
-    right: -58px;
-    top: -62px;
+    right: -28px;
+    top: -32px;
   }
 }
 
