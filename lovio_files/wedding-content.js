@@ -41,7 +41,7 @@
       targetDate: "2026-10-17T11:00:00+02:00"
     },
     saveTheDateQuote: {
-      text: "Ancora informe mi hanno visto i tuoi occhi\ne tutto era scritto nel tuo libro;\ni miei giorni erano fissati,\nquando ancora non ne esisteva uno.",
+      text: "Tutto era scritto nel tuo libro;\ni miei giorni erano fissati,\nquando ancora non ne esisteva uno.",
       footer: "Salmi 138:16"
     },
     storyIntro: {
