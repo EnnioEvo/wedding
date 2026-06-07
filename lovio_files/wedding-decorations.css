@@ -71,21 +71,25 @@
 
 @media screen and (max-width: 991px) {
   .wedding-venues-vase {
-    width: 150px;
+    width: 105px;
     top: -94px;
     left: clamp(24px, 6vw, 58px);
+  }
+
+  .wedding-ivy--quote-right {
+    width: 122px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .wedding-venues-vase {
-    width: 94px;
+    width: 66px;
     top: 0;
     left: 6px;
   }
 
   .wedding-ivy--quote-right {
-    width: 100px;
+    width: 70px;
     right: -28px;
     top: -32px;
   }
@@ -93,8 +97,8 @@
 
 @media screen and (max-width: 479px) {
   .wedding-venues-vase {
-    width: 82px;
-    top: -54px;
+    width: 57px;
+    top: 0;
     left: 0;
   }
 }
