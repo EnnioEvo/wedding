@@ -104,7 +104,7 @@
       }
     ],
     storyQuote: {
-      text: "Tutto era scritto nel tuo libro;\ni miei giorni erano fissati,\nquando ancora non ne esisteva uno.",
+      text: "Tutto era scritto nel tuo libro\ni miei giorni erano fissati\nquando ancora non ne esisteva uno",
       footer: "- Salmi 138:16"
     },
     venuesIntro: {
