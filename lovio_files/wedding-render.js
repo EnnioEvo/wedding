@@ -245,6 +245,7 @@
 
   function giftSection() {
     var gift = content.gift;
+    var gentleGiftVariant = isGentleGiftVariant();
     return [
       '<section id="regali" class="section wedding-section reveal-on-scroll">',
       '<div class="content">',
@@ -260,8 +261,12 @@
       '<h3 class="gift-contribution-title">' + escapeHtml(gift.giftTitle) + "</h3>",
       '<p class="gift-contribution-text">' + allowedInlineHtml(gift.giftText) + "</p>",
       "</div>",
-      '<details class="gift-bank-details gift-bank-details-visible" open>',
-      '<summary aria-hidden="true" tabindex="-1"><span>Scopri come</span></summary>',
+      gentleGiftVariant
+        ? '<details class="gift-bank-details">'
+        : '<details class="gift-bank-details gift-bank-details-visible" open>',
+      gentleGiftVariant
+        ? '<summary><span>Scopri come</span></summary>'
+        : '<summary aria-hidden="true" tabindex="-1"><span>Scopri come</span></summary>',
       '<div class="gift-bank">',
       gift.bank.map(giftCopyRow).join(""),
       "</div>",
@@ -270,6 +275,12 @@
       "</div>",
       "</section>"
     ].join("");
+  }
+
+  function isGentleGiftVariant() {
+    var search = window.location.search || "";
+    var params = new URLSearchParams(search);
+    return params.get("l") === "it";
   }
 
   function honeymoonImage(image) {
