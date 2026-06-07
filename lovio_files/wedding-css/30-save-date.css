@@ -76,9 +76,11 @@
     to bottom,
     var(--wedding-ink) 0,
     var(--wedding-ink) 50%,
-    var(--wedding-paper) 50%,
-    var(--wedding-paper) 100%
+    #fff 50%,
+    #fff 100%
   );
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .save-date-divider .cut-line {

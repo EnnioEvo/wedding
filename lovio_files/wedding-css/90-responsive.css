@@ -143,8 +143,8 @@
   }
 
   .wedding-save-date-quote {
-    padding-top: 54px;
-    padding-bottom: 54px;
+    padding-top: 30px;
+    padding-bottom: 34px;
   }
 
   .save-date-quote-text {
@@ -219,6 +219,11 @@
 
   .save-date-quote-text {
     font-size: 22px;
+  }
+
+  .wedding-save-date-quote {
+    padding-top: 26px;
+    padding-bottom: 30px;
   }
 
   .save-date-quote-footer {
