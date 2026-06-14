@@ -21,8 +21,8 @@
 }
 
 .wedding-card:not(.map-card) {
-  flex-direction: column;
-  display: flex;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  display: grid;
 }
 
 .wedding-card.map-card {
@@ -31,7 +31,6 @@
 
 .wedding-card-section {
   border-top: 1px solid var(--wedding-line);
-  margin-top: auto;
   padding-top: 22px;
 }
 

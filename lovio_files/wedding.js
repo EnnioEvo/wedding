@@ -48,12 +48,12 @@
   var addParticipantButton = form ? form.querySelector("[data-rsvp-add]") : null;
   var submitLabel = submitButton ? submitButton.textContent : "";
   var uselessInfoExamples = [
-    "ho il biglietto pronto per la turchia 🧑‍🦲",
     "Mangio la pizza partendo dal cornicione",
-    "Nel film X tifavo per il cattivo",
+    "ho il biglietto pronto per la turchia 🧑‍🦲",
     "Una volta mi ha intervistato il TG",
     "ho vinto il torneo di enigmistica",
-    "Riconosco la sottomarca delle patatine",
+    "Riconosco le sottomarche delle patatine",
+    "Nel film X tifavo per il cattivo",
     "Non mangio niente che sia verde",
     "Posso mangiare 5 hamburger in un quarto d'ora",
     "So toccarmi la lingua col naso",

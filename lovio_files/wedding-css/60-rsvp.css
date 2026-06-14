@@ -66,6 +66,13 @@
   margin: 0;
 }
 
+.rsvp-checkbox-field span {
+  background-clip: unset;
+  -webkit-background-clip: unset;
+  color: rgba(80, 100, 0, 1);
+  font-weight: 400;
+}
+
 .rsvp-participants {
   width: 100%;
   grid-row-gap: 18px;

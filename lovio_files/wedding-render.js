@@ -257,8 +257,10 @@
   function detailCard(card) {
     return [
       '<div class="wedding-card ' + (card.map ? "map-card" : "") + '">',
+      '<div class="wedding-card-main">',
       '<h3 class="wedding-card-title">' + escapeHtml(card.title) + "</h3>",
       '<p class="wedding-card-text">' + card.html + "</p>",
+      "</div>",
       detailCardSections(card),
       card.map ? '<div class="map-placeholder">' + mapFrame(card.map) + "</div>" : "",
       "</div>"
