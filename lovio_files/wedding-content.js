@@ -147,7 +147,7 @@
           sections: [
             {
               title: "Navetta",
-              html: "Sarà a disposizione una navetta di 28 posti, che porterà dalla chiesa al ricevimento."
+              html: "Sarà a disposizione una navetta di 28 posti, che porterà dalla chiesa al ricevimento e riaccompagnerà a Palermo a fine ricevimento."
             }
           ]
         }
