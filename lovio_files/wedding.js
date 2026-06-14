@@ -224,6 +224,11 @@
       uselessInfoExamples[(participantNumber - 2) % uselessInfoExamples.length],
       "data-rsvp-info"
     );
+    var shuttleField = createParticipantCheckboxField(
+      "Mi potrebbe interessare la navetta",
+      "participant-shuttle-" + participantNumber,
+      "data-rsvp-shuttle"
+    );
     var removeButton = document.createElement("button");
 
     row.className = "rsvp-participant-row has-remove";
@@ -242,6 +247,7 @@
     row.appendChild(nameField);
     row.appendChild(infoField);
     row.appendChild(removeButton);
+    row.appendChild(shuttleField);
     participantList.appendChild(row);
   }
 
@@ -264,6 +270,25 @@
     return field;
   }
 
+  function createParticipantCheckboxField(label, name, dataAttribute) {
+    var fieldLabel = document.createElement("label");
+    var input = document.createElement("input");
+    var labelText = document.createElement("span");
+
+    fieldLabel.className = "rsvp-checkbox-field";
+    fieldLabel.setAttribute("for", name);
+    input.id = name;
+    input.name = name;
+    input.type = "checkbox";
+    input.value = "Sì";
+    input.setAttribute(dataAttribute, "");
+    labelText.textContent = label;
+
+    fieldLabel.appendChild(input);
+    fieldLabel.appendChild(labelText);
+    return fieldLabel;
+  }
+
   function resetAdditionalParticipants() {
     if (!participantList) return;
     participantList.innerHTML = "";
@@ -278,10 +303,13 @@
       var nameLabel = nameInput && nameInput.parentElement ? nameInput.parentElement.querySelector("label") : null;
       var infoInput = row.querySelector("[data-rsvp-info]");
       var infoLabel = infoInput && infoInput.parentElement ? infoInput.parentElement.querySelector("label") : null;
+      var shuttleInput = row.querySelector("[data-rsvp-shuttle]");
+      var shuttleLabel = shuttleInput && shuttleInput.parentElement ? shuttleInput.parentElement : null;
       var removeButton = row.querySelector("[data-rsvp-remove]");
 
       updateParticipantControl(nameInput, nameLabel, "participant-name-" + participantNumber, "Nome " + participantNumber);
       updateParticipantControl(infoInput, infoLabel, "participant-info-" + participantNumber, "Informazione superflua");
+      updateParticipantCheckbox(shuttleInput, shuttleLabel, "participant-shuttle-" + participantNumber);
 
       if (removeButton) {
         removeButton.setAttribute("aria-label", "Rimuovi Nome " + participantNumber);
@@ -295,6 +323,13 @@
     input.name = id;
     label.setAttribute("for", id);
     label.textContent = labelText;
+  }
+
+  function updateParticipantCheckbox(input, label, id) {
+    if (!input || !label) return;
+    input.id = id;
+    input.name = id;
+    label.setAttribute("for", id);
   }
 
   function formatRsvpMessage(formNode) {
@@ -322,14 +357,17 @@
     return getParticipantRows(formNode).reduce(function (lines, row, index) {
       var nameInput = row.querySelector("[data-rsvp-name]");
       var infoInput = row.querySelector("[data-rsvp-info]");
+      var shuttleInput = row.querySelector("[data-rsvp-shuttle]");
       var name = nameInput ? nameInput.value.trim() : "";
       var info = infoInput ? infoInput.value.trim() : "";
+      var shuttleInterest = Boolean(shuttleInput && shuttleInput.checked);
 
-      if (index > 0 && !name && !info) return lines;
+      if (index > 0 && !name && !info && !shuttleInterest) return lines;
 
       participantIndex += 1;
       lines.push(String(participantIndex) + ". " + (name || "Nome non indicato"));
       lines.push("   Info superflua: " + (info || "Non indicata"));
+      lines.push("   Navetta: " + (shuttleInterest ? "Sì, potrebbe interessare" : "No"));
       lines.push("");
       return lines;
     }, []).join("\n").trim();

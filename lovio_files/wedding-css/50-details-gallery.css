@@ -20,8 +20,28 @@
   padding: 28px;
 }
 
+.wedding-card:not(.map-card) {
+  flex-direction: column;
+  display: flex;
+}
+
 .wedding-card.map-card {
   grid-column: span 1.7;
+}
+
+.wedding-card-section {
+  border-top: 1px solid var(--wedding-line);
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.wedding-card-subtitle {
+  color: var(--wedding-ink);
+  margin: 0 0 10px;
+  font-family: Marcellus, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 120%;
 }
 
 .map-placeholder {

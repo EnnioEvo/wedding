@@ -259,9 +259,23 @@
       '<div class="wedding-card ' + (card.map ? "map-card" : "") + '">',
       '<h3 class="wedding-card-title">' + escapeHtml(card.title) + "</h3>",
       '<p class="wedding-card-text">' + card.html + "</p>",
+      detailCardSections(card),
       card.map ? '<div class="map-placeholder">' + mapFrame(card.map) + "</div>" : "",
       "</div>"
     ].join("");
+  }
+
+  function detailCardSections(card) {
+    if (!card.sections || !card.sections.length) return "";
+
+    return card.sections.map(function (section) {
+      return [
+        '<div class="wedding-card-section">',
+        '<h4 class="wedding-card-subtitle">' + escapeHtml(section.title) + "</h4>",
+        '<p class="wedding-card-text">' + section.html + "</p>",
+        "</div>"
+      ].join("");
+    }).join("");
   }
 
   function giftSection() {
@@ -345,6 +359,7 @@
       '<div class="form-field full"><label for="attendance">Parteciperai?</label><select id="attendance" name="attendance" required><option value="">Seleziona</option><option>✅ Sì ci sarò 😎</option><option>❌ No purtroppo non riuscirò 😞</option></select></div>',
       formField("Nome e cognome", "name", "text", "Es: Mario Rossi", true, "data-rsvp-name"),
       formField("Dicci anche una cosa superflua \nda sapere su di te (Opzionale)", "participant-info-1", "text", "Tipo: sbagli spesso il verso della maglietta", false, "data-rsvp-info"),
+      checkboxField("Mi potrebbe interessare la navetta", "participant-shuttle-1", "data-rsvp-shuttle"),
       "</div>",
       '<div class="rsvp-add-row full"><p class="rsvp-add-question">Confermi anche per qualcun altro?</p><div class="rsvp-participants" data-rsvp-participants></div><button type="button" class="rsvp-add-button" data-rsvp-add>Aggiungi un&apos;altra persona</button></div>',
       '<div class="form-field full"><label for="dietary">Note alimentari (Opzionale)</label><textarea id="dietary" name="dietary" placeholder="Facci sapere se hai allergie o intolleranze"></textarea></div>',
@@ -362,6 +377,15 @@
       '<label for="' + name + '">' + escapeHtml(label) + "</label>",
       '<input id="' + name + '" name="' + name + '" type="' + type + '" placeholder="' + escapeHtml(placeholder) + '"' + (required ? " required" : "") + (attributes ? " " + attributes : "") + ">",
       "</div>"
+    ].join("");
+  }
+
+  function checkboxField(label, name, attributes) {
+    return [
+      '<label class="rsvp-checkbox-field" for="' + name + '">',
+      '<input id="' + name + '" name="' + name + '" type="checkbox" value="Sì" ' + attributes + ">",
+      '<span>' + escapeHtml(label) + "</span>",
+      "</label>"
     ].join("");
   }
 

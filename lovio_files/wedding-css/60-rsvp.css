@@ -44,6 +44,28 @@
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
 }
 
+.rsvp-checkbox-field {
+  grid-column: 1 / -1;
+  color: var(--wedding-ink);
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  line-height: 150%;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.rsvp-checkbox-field input {
+  width: 18px;
+  height: 18px;
+  min-height: 0;
+  accent-color: var(--wedding-ink);
+  flex: 0 0 auto;
+  margin: 0;
+}
+
 .rsvp-participants {
   width: 100%;
   grid-row-gap: 18px;

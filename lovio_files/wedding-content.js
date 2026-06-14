@@ -37,8 +37,8 @@
     saveTheDate: {
       eyebrow: "Save the date",
       title: "Ci sposiamo<br>Sabato 17 Ottobre 2026.",
-      text: "La cerimonia sarà alle 11:00 presso la Chiesa Santa Maria della Pietà di Palermo. <br> A seguire festeggeremo insieme a Baglio della Luna, Partinico.",
-      targetDate: "2026-10-17T11:00:00+02:00"
+      text: "La cerimonia sarà alle 10:30 presso la Chiesa Santa Maria della Pietà di Palermo. <br> A seguire festeggeremo insieme a Baglio della Luna, Partinico.",
+      targetDate: "2026-10-17T10:45:00+02:00"
     },
     saveTheDateQuote: {
       text: "Non ti erano nascoste le mie ossa\n mentre venivo formato nel segreto\n intessuto nelle profondità della terra.",
@@ -132,10 +132,6 @@
       title: "Orari e mappa",
       cards: [
         {
-          title: "Data e orari",
-          html: "Sabato 17 Ottobre 2026<br>Cerimonia alle 11:00<br>Ricevimento a seguire"
-        },
-        {
           title: "Cerimonia",
           html: "<i>La nostra promessa</i><br>Chiesa Santa Maria della Pietà<br>P.za Bellini, 1, 90133 Palermo PA",
           map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10558.169101330592!2d13.363499350817092!3d38.11780486771996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319e52ede184e8b%3A0x58413da94c6faeb6!2sChiesa%20Parrocchiale%20di%20Santa%20Maria%20della%20Piet%C3%A0!5e0!3m2!1sit!2sit!4v1779611121087!5m2!1sit!2sit"
@@ -144,6 +140,16 @@
           title: "Ricevimento",
           html: "<i>Pranzo, brindisi e festa fino al tramonto.</i><br>Baglio della Luna, Partinico<br>Via La Ghiaia, 7, 54021 Bagnone MS",
           map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d179182.84374437958!2d12.878427201624078!3d38.03326953561897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319891f05441005%3A0x61ffb7836984642d!2sIl%20Baglio%20della%20Luna!5e0!3m2!1sit!2sit!4v1779611284597!5m2!1sit!2sit"
+        },
+        {
+          title: "Data e orari",
+          html: "Sabato 17 Ottobre 2026<br>Cerimonia alle 10:30<br>Ricevimento a seguire",
+          sections: [
+            {
+              title: "Navetta",
+              html: "Sarà a disposizione una navetta di almeno 20 posti, che porterà dalla Chiesa al Ricevimento"
+            }
+          ]
         }
       ]
     },
