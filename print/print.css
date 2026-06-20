@@ -1,0 +1,357 @@
+:root {
+  --print-ink: #506400;
+  --print-muted: #68705a;
+  --print-sage: #8a9570;
+  --print-paper: #fbf8f2;
+  --print-white: #fffdf9;
+  --print-line: rgba(80, 100, 0, .22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  color: var(--print-muted);
+  background: var(--print-paper);
+  font-family: Montserrat, Arial, sans-serif;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.print-sheet {
+  position: relative;
+  overflow: hidden;
+  color: var(--print-muted);
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, .92), rgba(255, 255, 255, 0) 42%),
+    linear-gradient(145deg, var(--print-white), var(--print-paper));
+  isolation: isolate;
+}
+
+.print-sheet::before {
+  content: "";
+  position: absolute;
+  inset: .14in;
+  border: 1px solid rgba(80, 100, 0, .13);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.print-sheet::after {
+  content: "";
+  position: absolute;
+  inset: .26in;
+  border: 1px solid rgba(80, 100, 0, .08);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.invitation-sheet {
+  width: 5in;
+  height: 7in;
+}
+
+.invitation-content {
+  position: relative;
+  z-index: 3;
+  width: 3.78in;
+  min-height: 6.2in;
+  margin: 0 auto;
+  padding-top: .46in;
+  text-align: center;
+}
+
+.hairline {
+  width: 1.58in;
+  height: 1px;
+  margin: 0 auto .16in;
+  background: linear-gradient(90deg, transparent, var(--print-line), transparent);
+}
+
+.rings-mark {
+  width: .55in;
+  height: auto;
+  margin-bottom: .16in;
+  opacity: .92;
+}
+
+.announcement {
+  max-width: 3in;
+  margin: 0 auto .26in;
+  color: var(--print-sage);
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: .122in;
+  font-weight: 500;
+  letter-spacing: .045in;
+  line-height: 1.85;
+  text-transform: uppercase;
+}
+
+.invitation-content h1 {
+  margin: 0;
+  color: var(--print-ink);
+  font-family: Marcellus, Georgia, serif;
+  font-size: .58in;
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+.invitation-content h1 span {
+  display: block;
+  margin: .02in 0;
+  color: var(--print-sage);
+  font-family: Homemade Apple, "Brush Script MT", cursive;
+  font-size: .23in;
+  line-height: 1;
+}
+
+.date-block {
+  width: 2.32in;
+  margin: .34in auto .32in;
+  padding: .18in 0;
+  border-top: 1px solid var(--print-line);
+  border-bottom: 1px solid var(--print-line);
+}
+
+.date-block p,
+.date-block strong {
+  display: block;
+  margin: 0;
+}
+
+.date-block p {
+  color: var(--print-sage);
+  font-size: .102in;
+  font-weight: 500;
+  letter-spacing: .04in;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.date-block strong {
+  margin-top: .09in;
+  color: var(--print-ink);
+  font-family: Marcellus, Georgia, serif;
+  font-size: .24in;
+  font-weight: 400;
+  letter-spacing: .006in;
+  line-height: 1.1;
+}
+
+.details-group {
+  display: grid;
+  gap: .14in;
+  width: 3.08in;
+  margin: 0 auto;
+}
+
+.details-group p {
+  margin: 0;
+  color: var(--print-muted);
+  font-family: Marcellus, Georgia, serif;
+  font-size: .15in;
+  line-height: 1.52;
+}
+
+.details-group span {
+  display: block;
+  margin-bottom: .035in;
+  color: var(--print-sage);
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: .085in;
+  font-weight: 500;
+  letter-spacing: .032in;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.rsvp-note {
+  margin: .32in auto 0;
+  color: var(--print-ink);
+  font-size: .095in;
+  font-weight: 500;
+  letter-spacing: .026in;
+  line-height: 1.55;
+  text-transform: uppercase;
+}
+
+.botanical,
+.rsvp-sprig {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  filter: saturate(1.25) contrast(1.08);
+}
+
+.botanical-top-right {
+  width: 1.26in;
+  top: -.24in;
+  right: -.08in;
+  opacity: .25;
+  transform: rotate(10deg);
+}
+
+.botanical-bottom-left {
+  width: 1.02in;
+  left: -.22in;
+  bottom: -.25in;
+  opacity: .18;
+  transform: rotate(-18deg);
+}
+
+.rsvp-sheet {
+  display: grid;
+  grid-template-columns: 1fr 1.34in;
+  column-gap: .24in;
+  width: 4.7in;
+  height: 252pt;
+  padding: .47in .47in .4in;
+}
+
+.rsvp-sheet::before {
+  inset: .12in;
+}
+
+.rsvp-sheet::after {
+  inset: .23in;
+}
+
+.rsvp-copy,
+.qr-area {
+  position: relative;
+  z-index: 3;
+}
+
+.rsvp-copy {
+  align-self: center;
+}
+
+.kicker {
+  margin: 0 0 .08in;
+  color: var(--print-sage);
+  font-size: .09in;
+  font-weight: 500;
+  letter-spacing: .035in;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.rsvp-copy h1 {
+  margin: 0 0 .16in;
+  color: var(--print-ink);
+  font-family: Marcellus, Georgia, serif;
+  font-size: .5in;
+  font-weight: 400;
+  line-height: .95;
+}
+
+.rsvp-text,
+.rsvp-deadline,
+.rsvp-extra {
+  max-width: 2.18in;
+  margin: 0;
+  font-size: .105in;
+  line-height: 1.62;
+}
+
+.rsvp-text {
+  color: var(--print-muted);
+}
+
+.rsvp-deadline {
+  margin-top: .12in;
+  color: var(--print-ink);
+  font-weight: 500;
+}
+
+.rsvp-extra {
+  margin-top: .08in;
+  color: var(--print-sage);
+  font-size: .086in;
+}
+
+.small-rule {
+  width: .92in;
+  height: 1px;
+  margin: .18in 0 .12in;
+  background: var(--print-line);
+}
+
+.rsvp-monogram {
+  margin: 0;
+  color: var(--print-ink);
+  font-family: Marcellus, Georgia, serif;
+  font-size: .14in;
+}
+
+.qr-area {
+  align-self: center;
+  justify-self: end;
+  width: 1.3in;
+  text-align: center;
+}
+
+.qr-code {
+  display: block;
+  width: 1.18in;
+  height: 1.18in;
+  margin: 0 auto .11in;
+  background: #fff;
+}
+
+.qr-area p {
+  margin: 0;
+  color: var(--print-sage);
+  font-size: .069in;
+  font-weight: 500;
+  letter-spacing: .018in;
+}
+
+.rsvp-sprig-top {
+  width: .72in;
+  top: -.1in;
+  right: .22in;
+  opacity: .18;
+  transform: rotate(26deg);
+}
+
+.rsvp-sprig-bottom {
+  width: .78in;
+  left: -.15in;
+  bottom: -.22in;
+  opacity: .18;
+  transform: rotate(-18deg);
+}
+
+@media screen {
+  html,
+  body {
+    width: auto;
+    min-height: 100%;
+  }
+
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 32px;
+    background: #ebe7dc;
+  }
+
+  .print-sheet {
+    box-shadow: 0 20px 70px rgba(34, 44, 14, .18);
+  }
+}
+
+@media print {
+  body {
+    background: transparent;
+  }
+}
