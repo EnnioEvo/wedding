@@ -106,7 +106,7 @@ body {
 
 .date-block {
   width: 2.32in;
-  margin: .34in auto .32in;
+  margin: .34in auto .5in;
   padding: .18in 0;
   border-top: 1px solid var(--print-line);
   border-bottom: 1px solid var(--print-line);
