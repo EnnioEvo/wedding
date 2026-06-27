@@ -147,7 +147,7 @@
           sections: [
             {
               title: "Navetta",
-              html: "Sarà disponibile trasporto navetta, che porterà dalla chiesa al ricevimento e riaccompagnerà a Palermo a fine ricevimento."
+              html: "Sarà disponibile trasporto navetta per il ricevimento a Partinico, andata e ritorno."
             }
           ]
         }

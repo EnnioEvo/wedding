@@ -106,7 +106,7 @@ body {
 
 .date-block {
   width: 2.32in;
-  margin: .34in auto .5in;
+  margin: .34in auto .78in;
   padding: .18in 0;
   border-top: 1px solid var(--print-line);
   border-bottom: 1px solid var(--print-line);
@@ -233,12 +233,12 @@ body {
 }
 
 .rsvp-copy h1 {
-  margin: 0 0 .16in;
+  margin: 0 0 .14in;
   color: var(--print-ink);
   font-family: Marcellus, Georgia, serif;
-  font-size: .5in;
+  font-size: .31in;
   font-weight: 400;
-  line-height: .95;
+  line-height: 1.04;
 }
 
 .rsvp-text,
@@ -258,6 +258,11 @@ body {
   margin-top: .12in;
   color: var(--print-ink);
   font-weight: 500;
+}
+
+.rsvp-deadline span {
+  display: block;
+  white-space: nowrap;
 }
 
 .rsvp-extra {
