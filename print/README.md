@@ -8,14 +8,19 @@ Source files:
 
 Generated files live in `../assets/print/`.
 
-To regenerate the PDFs from the repository root:
+To regenerate the PDFs:
 
 ```bash
-google-chrome --headless=new --disable-gpu --disable-dev-shm-usage --no-sandbox --no-pdf-header-footer --run-all-compositor-stages-before-draw --virtual-time-budget=3000 --print-to-pdf=assets/print/invito-5x7.pdf file://"$PWD"/print/invito.html
-google-chrome --headless=new --disable-gpu --disable-dev-shm-usage --no-sandbox --no-pdf-header-footer --run-all-compositor-stages-before-draw --virtual-time-budget=3000 --print-to-pdf=assets/print/rsvp-4.7x3.5.pdf file://"$PWD"/print/rsvp.html
-gs -o /tmp/rsvp-fixed.pdf -sDEVICE=pdfwrite -dDEVICEWIDTHPOINTS=338.4 -dDEVICEHEIGHTPOINTS=252 -dFIXEDMEDIA -dPDFFitPage -dCompatibilityLevel=1.4 assets/print/rsvp-4.7x3.5.pdf
-mv /tmp/rsvp-fixed.pdf assets/print/rsvp-4.7x3.5.pdf
+./print/generate-pdfs.sh
 ```
 
-The Ghostscript pass keeps the RSVP card's PDF MediaBox at exactly 4.7x3.5 inches;
-headless Chrome rounds that custom width slightly when exporting directly.
+You can also regenerate just one file:
+
+```bash
+./print/generate-pdfs.sh invito
+./print/generate-pdfs.sh rsvp
+```
+
+The script prints the HTML with headless Chrome, then runs Ghostscript to keep the
+PDF MediaBox exactly at the intended print sizes: 5x7 inches for the invitation
+and 4.7x3.5 inches for the RSVP.

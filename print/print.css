@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap");
 
 :root {
-  --print-name: "Cormorant Garamond", Marcellus, Georgia, serif;
+  --print-name: "Pinyon Script", Marcellus, Georgia, serif;
   --print-ink: #506400;
   --print-muted: #68705a;
   --print-sage: #8a9570;
@@ -89,10 +89,10 @@ body {
   margin: .02in 0 0;
   color: var(--print-ink);
   font-family: var(--print-name);
-  font-size: .58in;
-  font-weight: 500;
-  letter-spacing: .012in;
-  line-height: .92;
+  font-size: .72in;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: .9;
 }
 
 .invitation-content h1 span {
@@ -106,7 +106,7 @@ body {
 
 .date-block {
   width: 2.32in;
-  margin: .34in auto .78in;
+  margin: .34in auto .72in;
   padding: .18in 0;
   border-top: 1px solid var(--print-line);
   border-bottom: 1px solid var(--print-line);
