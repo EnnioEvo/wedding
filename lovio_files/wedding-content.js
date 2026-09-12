@@ -147,7 +147,11 @@
           sections: [
             {
               title: "Navetta",
-              html: "Sarà disponibile trasporto navetta per il ricevimento a Partinico, andata e ritorno."
+              html: "Sarà disponibile trasporto navetta, andata e ritorno."
+                + "<br/>Ore 8:50 ritrovo a Termini Imerese, presso stazione di rifornimento Gatto."
+                + "<br/>Ore 9:00 partenza per la chiesa a Palermo."
+                + "<br/>Ore 12:30 partenza del pullman dalla chiesa al ricevimento a partinico."
+                + "<br/>Dopo il ricevimento il pullman riaccompagnerà a Termini Imerese con tappa a Palermo, vicino la chiesa."
             }
           ]
         }
@@ -174,7 +178,7 @@
     rsvp: {
       eyebrow: "La tua conferma",
       title: "Conferma la tua presenza",
-      deadline: "Entro il 31 Ago 2026",
+      deadline: "Entro il 15 Set 2026",
       success: "Grazie, la tua conferma è stata inviata.",
       error: "Non siamo riusciti a inviare la conferma. Riprova tra poco.",
       sending: "Invio in corso...",
