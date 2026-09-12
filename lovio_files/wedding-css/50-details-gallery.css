@@ -21,7 +21,7 @@
 }
 
 .wedding-card:not(.map-card) {
-  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
   display: grid;
 }
 
