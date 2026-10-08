@@ -148,8 +148,8 @@
             {
               title: "Navetta",
               html: "Sarà disponibile trasporto navetta, andata e ritorno."
-                + "<br/>Ore 8:50 ritrovo a Termini Imerese, presso stazione di rifornimento Gatto."
-                + "<br/>Ore 9:00 partenza per la chiesa a Palermo."
+                + "<br/>Ore 9:00 ritrovo a Termini Imerese, presso stazione di rifornimento Gatto."
+                + "<br/>Ore 9:15 partenza per la chiesa a Palermo."
                 + "<br/>Ore 12:30 partenza del pullman dalla chiesa al ricevimento a partinico."
                 + "<br/>Dopo il ricevimento, il pullman riaccompagnerà a Termini Imerese, con tappa a Palermo vicino la chiesa."
             }
