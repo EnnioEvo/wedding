@@ -14,7 +14,7 @@ from svglib.svglib import svg2rlg
 ROOT = Path(__file__).resolve().parents[2]
 FONTS = Path("/home/ennio/.codex/skills/canvas-design/canvas-fonts")
 OUTPUT = ROOT / "output/pdf/segnatavoli-1-16-fronte-retro.pdf"
-WIDTH, HEIGHT = 106 * mm, 157 * mm
+WIDTH, HEIGHT = 100 * mm, 150 * mm
 INK = HexColor("#506400")
 SAGE = HexColor("#8a9570")
 
@@ -39,17 +39,17 @@ def frame(page: canvas.Canvas) -> None:
     page.setLineWidth(0.55)
     page.rect(5 * mm, 5 * mm, WIDTH - 10 * mm, HEIGHT - 10 * mm)
     ivy = str(ROOT / "assets/images/decor/edera_vertical_1.png")
-    page.drawImage(ivy, 88 * mm, 4 * mm, width=16 * mm, height=38 * mm,
+    page.drawImage(ivy, 82 * mm, 4 * mm, width=16 * mm, height=38 * mm,
                    mask="auto", preserveAspectRatio=True)
     page.setFillColor(INK)
-    centered_text(page, "Miriam ed Ennio", 29, "Names", 25)
-    centered_text(page, "17 OTTOBRE 2026", 19, "Sans", 8.5, 0.9)
+    centered_text(page, "Miriam ed Ennio", 22, "Names", 25)
+    centered_text(page, "17 OTTOBRE 2026", 12, "Sans", 8.5, 0.9)
 
 
 def foreground_vase(page: canvas.Canvas, x: float = 6) -> None:
     """Paint the hanging plant above the heading artwork."""
     vase = str(ROOT / "assets/images/decor/edera_on_vase_transparent_compress.png")
-    page.drawImage(vase, x * mm, 119 * mm, width=20.44 * mm, height=33 * mm,
+    page.drawImage(vase, x * mm, 112 * mm, width=20.44 * mm, height=33 * mm,
                    mask="auto", preserveAspectRatio=True)
 
 
@@ -57,11 +57,11 @@ def front(page: canvas.Canvas, number: int) -> None:
     """Give the table number visual priority for easy recognition."""
     frame(page)
     page.setFillColor(INK)
-    centered_text(page, "TAVOLO", 117, "Sans", 10, 3)
-    centered_text(page, str(number), 73, "Serif", 110)
+    centered_text(page, "TAVOLO", 110, "Sans", 10, 3)
+    centered_text(page, str(number), 66, "Serif", 110)
     page.setStrokeColor(SAGE)
     page.setLineWidth(0.6)
-    page.line(46 * mm, 61 * mm, 60 * mm, 61 * mm)
+    page.line(43 * mm, 54 * mm, 57 * mm, 54 * mm)
     foreground_vase(page)
     page.showPage()
 
@@ -70,25 +70,25 @@ def back(page: canvas.Canvas) -> None:
     """Keep the upload request and the original QR clearly separated."""
     frame(page)
     page.drawImage(str(ROOT / "assets/tables/share_the_love.png"),
-                   21 * mm, 114 * mm, width=64 * mm, height=30.77 * mm,
+                   18 * mm, 107 * mm, width=64 * mm, height=30.77 * mm,
                    preserveAspectRatio=True, mask="auto")
     page.setFillColor(INK)
-    centered_text(page, "CARICA LE TUE FOTO", 105, "Sans", 9, 0.65)
-    centered_text(page, "DEL MATRIMONIO", 99, "Sans", 9, 0.65)
-    centered_text(page, "E VEDI QUELLE DEGLI ALTRI", 89, "Sans", 7.5, 0.25)
+    centered_text(page, "CARICA LE TUE FOTO", 98, "Sans", 9, 0.65)
+    centered_text(page, "DEL MATRIMONIO", 92, "Sans", 9, 0.65)
+    centered_text(page, "E VEDI QUELLE DEGLI ALTRI", 82, "Sans", 7.5, 0.25)
     qr = svg2rlg(str(ROOT / "assets/tables/qr.svg"))
     if qr is None:
         raise ValueError("Unable to read the QR SVG")
     left, bottom, right, top = qr.getBounds()
     scale = 34 * mm / max(right - left, top - bottom)
     qr.scale(scale, scale)
-    renderPDF.draw(qr, page, 36 * mm - left * scale, 47 * mm - bottom * scale)
+    renderPDF.draw(qr, page, 33 * mm - left * scale, 40 * mm - bottom * scale)
     foreground_vase(page, x=2)
     page.showPage()
 
 
 def main() -> None:
-    """Write the shared reverse followed by sixteen 106 × 157 mm fronts."""
+    """Write the shared reverse followed by sixteen 100 × 150 mm fronts."""
     pdfmetrics.registerFont(TTFont("Names", "/tmp/GreatVibes-Regular.ttf"))
     for name, filename in (
         ("Serif", "InstrumentSerif-Regular.ttf"),

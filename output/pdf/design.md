@@ -10,6 +10,20 @@ Una cornice sottile tiene insieme i gesti organici. La ripetizione tra le facce 
 
 ## Specifiche
 
+Formato finale corretto a 106 × 157 mm. Testi e QR sono centrati sull'asse a
+53 mm; gli elementi salgono di 7 mm rispetto alla versione alta 150 mm,
+mantenendo le distanze dalla parte superiore. Il vaso segue la cornice superiore, l'edera inferiore
+segue il bordo destro e conserva la lieve fuoriuscita. Font, immagini e QR
+vettoriale mantengono le dimensioni originali. Esportati sia il PDF da 17 pagine
+sia quello da 32 pagine con numero e QR alternati per stampa fronte-retro.
+Backup prima del cambio formato: `segnatavoli-backup-prima-formato-106x152.pdf`
+e `segnatavoli-stampa-backup-prima-formato-106x152.pdf`.
+Backup della versione approvata alta 152 mm: `segnatavoli-backup-formato-106x152.pdf`
+e `segnatavoli-stampa-backup-formato-106x152.pdf`.
+Backup della versione alta 150 mm: `segnatavoli-backup-formato-106x150.pdf`
+e `segnatavoli-stampa-backup-formato-106x150.pdf`.
+Le misure nelle revisioni sotto descrivono il formato precedente.
+
 Retro aggiornato: «share the love» centrato a 50 mm, abbassato di 5 mm; vaso spostato di 4 mm a sinistra solo sul retro. Verificata visivamente la separazione tra foglie e calligrafia. Copia della versione precedente: `segnatavoli-backup-prima-retro-centrato.pdf`.
 
 Revisione finale: il fronte non contiene più la scritta «Benvenuti» né «AL NOSTRO MATRIMONIO». Il gruppo centrale è rialzato e riequilibrato: «TAVOLO» a 110 mm, numero a 66 mm e filetto a 54 mm dal bordo inferiore. Firma e data restano alla base. L'immagine verde descritta sotto è un esperimento conservato, non usato dal PDF finale.
